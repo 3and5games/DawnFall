@@ -1,0 +1,1095 @@
+fileFormatVersion: 2
+guid: 0df1917acd32b479daf92b9d09de51d2
+timeCreated: 1511108919
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Chavka
+    100002: Chavka_end
+    100004: Chavka_muscle_left
+    100006: Chavka_muscle_left_end
+    100008: Chavka_muscle_right
+    100010: Chavka_muscle_right_end
+    100012: Chelovek
+    100014: Chelovek_skelet
+    100016: Eye_left
+    100018: Eye_left_end
+    100020: Eye_right
+    100022: Eye_right_end
+    100024: Eyes
+    100026: Head
+    100028: Main
+    100030: Main.001
+    100032: Main.002
+    100034: Main.003
+    100036: //RootNode
+    100038: Neck
+    100040: Neck1
+    100042: Noga_left
+    100044: Noga_left.001
+    100046: Noga_left.002
+    100048: Noga_left.003
+    100050: Noga_left.003_end
+    100052: Noga_right
+    100054: Noga_right.001
+    100056: Noga_right.002
+    100058: Noga_right.003
+    100060: Noga_right.003_end
+    100062: Plecho_left
+    100064: Plecho_right
+    100066: Ryka_left.001
+    100068: Ryka_left.002
+    100070: Ryka_left.003
+    100072: Ryka_left.004
+    100074: Ryka_left.005
+    100076: Ryka_left.005_end
+    100078: Ryka_left.006
+    100080: Ryka_left.007
+    100082: Ryka_left.008
+    100084: Ryka_left.008_end
+    100086: Ryka_left.009
+    100088: Ryka_left.010
+    100090: Ryka_left.011
+    100092: Ryka_left.011_end
+    100094: Ryka_left.012
+    100096: Ryka_left.013
+    100098: Ryka_left.014
+    100100: Ryka_left.014_end
+    100102: Ryka_left.015
+    100104: Ryka_left.016
+    100106: Ryka_left.017
+    100108: Ryka_left.017_end
+    100110: Ryka_left.018
+    100112: Ryka_right.001
+    100114: Ryka_right.002
+    100116: Ryka_right.003
+    100118: Ryka_right.004
+    100120: Ryka_right.005
+    100122: Ryka_right.005_end
+    100124: Ryka_right.006
+    100126: Ryka_right.007
+    100128: Ryka_right.008
+    100130: Ryka_right.008_end
+    100132: Ryka_right.009
+    100134: Ryka_right.010
+    100136: Ryka_right.011
+    100138: Ryka_right.011_end
+    100140: Ryka_right.012
+    100142: Ryka_right.013
+    100144: Ryka_right.014
+    100146: Ryka_right.014_end
+    100148: Ryka_right.015
+    100150: Ryka_right.016
+    100152: Ryka_right.017
+    100154: Ryka_right.017_end
+    100156: Ryka_right.018
+    100158: Tooth
+    400000: Chavka
+    400002: Chavka_end
+    400004: Chavka_muscle_left
+    400006: Chavka_muscle_left_end
+    400008: Chavka_muscle_right
+    400010: Chavka_muscle_right_end
+    400012: Chelovek
+    400014: Chelovek_skelet
+    400016: Eye_left
+    400018: Eye_left_end
+    400020: Eye_right
+    400022: Eye_right_end
+    400024: Eyes
+    400026: Head
+    400028: Main
+    400030: Main.001
+    400032: Main.002
+    400034: Main.003
+    400036: //RootNode
+    400038: Neck
+    400040: Neck1
+    400042: Noga_left
+    400044: Noga_left.001
+    400046: Noga_left.002
+    400048: Noga_left.003
+    400050: Noga_left.003_end
+    400052: Noga_right
+    400054: Noga_right.001
+    400056: Noga_right.002
+    400058: Noga_right.003
+    400060: Noga_right.003_end
+    400062: Plecho_left
+    400064: Plecho_right
+    400066: Ryka_left.001
+    400068: Ryka_left.002
+    400070: Ryka_left.003
+    400072: Ryka_left.004
+    400074: Ryka_left.005
+    400076: Ryka_left.005_end
+    400078: Ryka_left.006
+    400080: Ryka_left.007
+    400082: Ryka_left.008
+    400084: Ryka_left.008_end
+    400086: Ryka_left.009
+    400088: Ryka_left.010
+    400090: Ryka_left.011
+    400092: Ryka_left.011_end
+    400094: Ryka_left.012
+    400096: Ryka_left.013
+    400098: Ryka_left.014
+    400100: Ryka_left.014_end
+    400102: Ryka_left.015
+    400104: Ryka_left.016
+    400106: Ryka_left.017
+    400108: Ryka_left.017_end
+    400110: Ryka_left.018
+    400112: Ryka_right.001
+    400114: Ryka_right.002
+    400116: Ryka_right.003
+    400118: Ryka_right.004
+    400120: Ryka_right.005
+    400122: Ryka_right.005_end
+    400124: Ryka_right.006
+    400126: Ryka_right.007
+    400128: Ryka_right.008
+    400130: Ryka_right.008_end
+    400132: Ryka_right.009
+    400134: Ryka_right.010
+    400136: Ryka_right.011
+    400138: Ryka_right.011_end
+    400140: Ryka_right.012
+    400142: Ryka_right.013
+    400144: Ryka_right.014
+    400146: Ryka_right.014_end
+    400148: Ryka_right.015
+    400150: Ryka_right.016
+    400152: Ryka_right.017
+    400154: Ryka_right.017_end
+    400156: Ryka_right.018
+    400158: Tooth
+    4300000: Eyes
+    4300002: Tooth
+    4300004: Chelovek
+    7400000: Chelovek_skelet|Chelovek_skeletAction
+    7400002: Chelovek_skelet|Chelovek_skeletAction.001
+    7400004: Chelovek_skelet|Static_pose
+    7400006: Chelovek_skelet|Static_pose.001
+    7400008: Chelovek_skelet|Static_pose2
+    9500000: //RootNode
+    13700000: Chelovek
+    13700002: Eyes
+    13700004: Tooth
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
+      does not match:\n\tTransform 'mixamorig:Hips' for human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Main
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_left
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_right
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_left.001
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_right.001
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_left.002
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_right.002
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Main.001
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Main.002
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Plecho_left
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Plecho_right
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.001
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.001
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.002
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.002
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.018
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.018
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_left.003
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Noga_right.003
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Eye_left
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Eye_right
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chavka
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.012
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.013
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.014
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.015
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.016
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.017
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.009
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.010
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.011
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.006
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.007
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.008
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.003
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.004
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_left.005
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.012
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.013
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.014
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.015
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.016
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.017
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.009
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.010
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.011
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.006
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.007
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.008
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.003
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.004
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Ryka_right.005
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Main.003
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Man_2017_90Z(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chelovek
+      parentName: Man_2017_90Z(Clone)
+      position: {x: 6.938893e-20, y: 0.00000015258787, z: 0.000000028610227}
+      rotation: {x: -0.7071068, y: 1.9964659e-23, z: 8.110791e-24, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chelovek_skelet
+      parentName: Man_2017_90Z(Clone)
+      position: {x: 6.938893e-20, y: -0.000000009536742, z: -0.0000000011920928}
+      rotation: {x: -0.7071068, y: 1.9964659e-23, z: 8.110791e-24, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Main
+      parentName: Chelovek_skelet
+      position: {x: -0, y: 0.029360827, z: 0.6041349}
+      rotation: {x: 0.8226546, y: -0.00018665339, z: -0.0002700794, w: 0.5685414}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: Main.001
+      parentName: Main
+      position: {x: -8.005796e-12, y: 0.08984582, z: 0.000000044405454}
+      rotation: {x: -0.19591329, y: 0.02401239, z: -0.004670093, w: 0.9803161}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Main.002
+      parentName: Main.001
+      position: {x: 2.8659667e-11, y: 0.1252415, z: 0.0000000041813673}
+      rotation: {x: -0.18187691, y: -0.008873635, z: -0.0071511082, w: 0.98325527}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+    - name: Main.003
+      parentName: Main.002
+      position: {x: 0.0000000010811868, y: 0.09250805, z: -0.00000002860456}
+      rotation: {x: 0.24728382, y: -0.01466606, z: 0.0037433766, w: 0.96882486}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Neck
+      parentName: Main.003
+      position: {x: -2.1760369e-16, y: 0.11493675, z: 0.0000000023841855}
+      rotation: {x: -0.0000000024556195, y: 0.9880462, z: 0.15415804, w: 0.00000013438593}
+      scale: {x: 1.0000004, y: 1.0000005, z: 0.99999976}
+    - name: Neck1
+      parentName: Neck
+      position: {x: -6.394884e-16, y: 0.036544815, z: 0.000000019073484}
+      rotation: {x: 0.02567592, y: 0.00000015738568, z: -4.9756593e-10, w: 0.9996703}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000005}
+    - name: Head
+      parentName: Neck1
+      position: {x: -6.585842e-15, y: 0.043574244, z: 0.0000000035762784}
+      rotation: {x: -0.21456009, y: 0.00000010685073, z: -0.000000053094407, w: 0.9767108}
+      scale: {x: 1.0000001, y: 1.0000007, z: 0.99999976}
+    - name: Chavka
+      parentName: Head
+      position: {x: 0.00022531456, y: 0.026624018, z: -0.055264227}
+      rotation: {x: -0.55172616, y: -0.00091531285, z: 0.0006052891, w: 0.8340246}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Chavka_end
+      parentName: Chavka
+      position: {x: -0, y: 0.042030416, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chavka_muscle_right
+      parentName: Head
+      position: {x: -0.018394643, y: 0.051636923, z: -0.08073959}
+      rotation: {x: -0.35899344, y: -0.055930775, z: 0.15083352, w: 0.9193719}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: Chavka_muscle_right_end
+      parentName: Chavka_muscle_right
+      position: {x: -0, y: 0.01862077, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chavka_muscle_left
+      parentName: Head
+      position: {x: 0.018845296, y: 0.051636923, z: -0.08073957}
+      rotation: {x: -0.3831936, y: -0.14521419, z: -0.069208086, w: 0.9095525}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Chavka_muscle_left_end
+      parentName: Chavka_muscle_left
+      position: {x: -0, y: 0.01862077, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_right
+      parentName: Head
+      position: {x: -0.0244815, y: 0.06810861, z: -0.035601158}
+      rotation: {x: -0.37997723, y: -0.0000003957534, z: 0.000000018591422, w: 0.92499584}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Eye_right_end
+      parentName: Eye_right
+      position: {x: -0, y: 0.06265679, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_left
+      parentName: Head
+      position: {x: 0.024481522, y: 0.0681086, z: -0.035601135}
+      rotation: {x: -0.37997723, y: 0.000000045318973, z: -0.00000016259585, w: 0.92499584}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Eye_left_end
+      parentName: Eye_left
+      position: {x: -0, y: 0.06265679, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Plecho_right
+      parentName: Main.003
+      position: {x: 0.061199654, y: 0.10449829, z: 0.001053414}
+      rotation: {x: 0.59497607, y: 0.43991303, z: 0.5536033, w: -0.38210407}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Ryka_right.001
+      parentName: Plecho_right
+      position: {x: 0.000000002004899, y: 0.0947173, z: 0.00000004817752}
+      rotation: {x: 0.13652886, y: -0.030162249, z: -0.017454827, w: 0.9900229}
+      scale: {x: 1, y: 0.99999994, z: 0.99999917}
+    - name: Ryka_right.002
+      parentName: Ryka_right.001
+      position: {x: 0.000000025033948, y: 0.19176053, z: -0.000000057145947}
+      rotation: {x: 0.018333837, y: 0.14868128, z: -0.0206887, w: 0.9884988}
+      scale: {x: 1.0000008, y: 1.0000002, z: 0.99999857}
+    - name: Ryka_right.018
+      parentName: Ryka_right.002
+      position: {x: 0.000000005513429, y: 0.20513761, z: 0.00000003814697}
+      rotation: {x: 0.09414603, y: -0.0055492655, z: -0.000015286027, w: 0.995543}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Ryka_right.003
+      parentName: Ryka_right.018
+      position: {x: -0.021846509, y: 0.07053364, z: -0.0072854534}
+      rotation: {x: 0.047886338, y: -0.006590615, z: -0.005769061, w: 0.99881446}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: Ryka_right.004
+      parentName: Ryka_right.003
+      position: {x: -0.00000001029577, y: 0.03473483, z: 7.4505796e-10}
+      rotation: {x: -0.02637757, y: 0.027329165, z: -0.0008759122, w: 0.999278}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Ryka_right.005
+      parentName: Ryka_right.004
+      position: {x: 0.0000000071525568, y: 0.021025656, z: 0.00000006198882}
+      rotation: {x: -0.029144872, y: -0.0015404068, z: -0.02505797, w: 0.9992599}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Ryka_right.005_end
+      parentName: Ryka_right.005
+      position: {x: -0, y: 0.014847631, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_right.006
+      parentName: Ryka_right.018
+      position: {x: -0.005083015, y: 0.07962319, z: 0.00071554654}
+      rotation: {x: 0.08054553, y: 0.009568809, z: -0.042953514, w: 0.9957791}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_right.007
+      parentName: Ryka_right.006
+      position: {x: 0.000000025033948, y: 0.043478884, z: -0.00000005282461}
+      rotation: {x: -0.024225764, y: -0.054694638, z: 0.004192296, w: 0.9982005}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Ryka_right.008
+      parentName: Ryka_right.007
+      position: {x: -0.000000011920927, y: 0.023957951, z: -0.00000006198882}
+      rotation: {x: 0.006934284, y: 0.0014037067, z: -0.041809656, w: 0.99910057}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Ryka_right.008_end
+      parentName: Ryka_right.008
+      position: {x: -0, y: 0.021227736, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_right.009
+      parentName: Ryka_right.018
+      position: {x: 0.011132671, y: 0.082648285, z: 0.0004917585}
+      rotation: {x: 0.07621076, y: 0.019530412, z: -0.09239493, w: 0.99260956}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: Ryka_right.010
+      parentName: Ryka_right.009
+      position: {x: -5.960464e-10, y: 0.04159721, z: 0.000000040531155}
+      rotation: {x: -0.01791221, y: -0.14789325, z: 0.0028595047, w: 0.988837}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Ryka_right.011
+      parentName: Ryka_right.010
+      position: {x: 0.000000010430812, y: 0.024368979, z: 0.000000019073484}
+      rotation: {x: 0.040157057, y: 0.0065685175, z: 0.0011566966, w: 0.9991712}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: Ryka_right.011_end
+      parentName: Ryka_right.011
+      position: {x: -0, y: 0.02683971, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_right.012
+      parentName: Ryka_right.018
+      position: {x: 0.026698492, y: 0.07421136, z: -0.0016367028}
+      rotation: {x: 0.15767078, y: 0.051381443, z: -0.36280787, w: 0.91698986}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Ryka_right.013
+      parentName: Ryka_right.012
+      position: {x: 0.000000012516974, y: 0.039181933, z: -0.00000011205672}
+      rotation: {x: -0.019552639, y: -0.21474895, z: 0.005401562, w: 0.9764586}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Ryka_right.014
+      parentName: Ryka_right.013
+      position: {x: -0, y: 0.026240231, z: -0.000000009536742}
+      rotation: {x: -0.017456649, y: 0.012144859, z: -0.03301094, w: 0.9992288}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Ryka_right.014_end
+      parentName: Ryka_right.014
+      position: {x: -0, y: 0.020040685, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_right.015
+      parentName: Ryka_right.018
+      position: {x: 0.020210993, y: 0.027104126, z: -0.019178303}
+      rotation: {x: -0.03201618, y: -0.030941568, z: -0.111423805, w: 0.9927751}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Ryka_right.016
+      parentName: Ryka_right.015
+      position: {x: 0.0000000783801, y: 0.043507677, z: -0.000000019073484}
+      rotation: {x: 0.01258021, y: -0.045873467, z: 0.017116372, w: 0.9987215}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Ryka_right.017
+      parentName: Ryka_right.016
+      position: {x: -0.00000004291534, y: 0.025946885, z: -0.00000006198882}
+      rotation: {x: -0.026785398, y: 0.08225293, z: 0.026995262, w: 0.99588567}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Ryka_right.017_end
+      parentName: Ryka_right.017
+      position: {x: -0, y: 0.02280786, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Plecho_left
+      parentName: Main.003
+      position: {x: -0.061199654, y: 0.10449829, z: 0.0010534144}
+      rotation: {x: 0.5536034, y: -0.38210404, z: 0.59497595, w: 0.43991292}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: Ryka_left.001
+      parentName: Plecho_left
+      position: {x: -0.0000000024022573, y: 0.09471733, z: -0.00000006477087}
+      rotation: {x: 0.017454546, y: 0.990023, z: -0.13652873, w: -0.0301603}
+      scale: {x: 1.0000002, y: 0.9999989, z: 1.0000004}
+    - name: Ryka_left.002
+      parentName: Ryka_left.001
+      position: {x: -0.0000000059604637, y: 0.19176063, z: -0.000000036759296}
+      rotation: {x: 0.018334083, y: -0.14868091, z: 0.02068867, w: 0.98849887}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000011}
+    - name: Ryka_left.018
+      parentName: Ryka_left.002
+      position: {x: 0.000000026524065, y: 0.20513757, z: 0.000000011920927}
+      rotation: {x: 0.09414604, y: 0.0055492073, z: 0.000015263911, w: 0.995543}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: Ryka_left.003
+      parentName: Ryka_left.018
+      position: {x: 0.021846475, y: 0.07053374, z: -0.0072854487}
+      rotation: {x: 0.04788599, y: 0.006590507, z: 0.0057699773, w: 0.99881434}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Ryka_left.004
+      parentName: Ryka_left.003
+      position: {x: 0.0000000049895603, y: 0.03473482, z: 0.000000022724269}
+      rotation: {x: -0.026381655, y: -0.027329473, z: 0.00087853416, w: 0.99927795}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Ryka_left.005
+      parentName: Ryka_left.004
+      position: {x: -0.0000000023841855, y: 0.021025635, z: 0.000000019073484}
+      rotation: {x: -0.029143417, y: 0.0015402675, z: 0.025056852, w: 0.99926}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Ryka_left.005_end
+      parentName: Ryka_left.005
+      position: {x: -0, y: 0.014847631, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_left.006
+      parentName: Ryka_left.018
+      position: {x: 0.0050829607, y: 0.07962327, z: 0.00071554177}
+      rotation: {x: 0.08054391, y: -0.009569321, z: 0.04295442, w: 0.99577916}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Ryka_left.007
+      parentName: Ryka_left.006
+      position: {x: 0.000000016093253, y: 0.043478854, z: -0.000000022798774}
+      rotation: {x: -0.024222378, y: 0.054694418, z: -0.0041919793, w: 0.9982005}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Ryka_left.008
+      parentName: Ryka_left.007
+      position: {x: -0.0000000071525568, y: 0.023957979, z: 0.00000006198882}
+      rotation: {x: 0.006934312, y: -0.0014037021, z: 0.041809622, w: 0.99910057}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Ryka_left.008_end
+      parentName: Ryka_left.008
+      position: {x: -0, y: 0.021227736, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_left.009
+      parentName: Ryka_left.018
+      position: {x: -0.011132714, y: 0.082648285, z: 0.00049175613}
+      rotation: {x: 0.0762107, y: -0.019530008, z: 0.092396244, w: 0.99260944}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Ryka_left.010
+      parentName: Ryka_left.009
+      position: {x: 0.000000043511385, y: 0.0415972, z: -0.000000033378598}
+      rotation: {x: -0.017912576, y: 0.14789268, z: -0.0028585866, w: 0.9888371}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_left.011
+      parentName: Ryka_left.010
+      position: {x: -0.00000002235174, y: 0.024368979, z: -0.000000057220454}
+      rotation: {x: 0.04015398, y: -0.006568339, z: -0.0011570939, w: 0.9991713}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: Ryka_left.011_end
+      parentName: Ryka_left.011
+      position: {x: -0, y: 0.02683971, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_left.012
+      parentName: Ryka_left.018
+      position: {x: -0.026698565, y: 0.07421141, z: -0.0016367553}
+      rotation: {x: 0.157671, y: -0.05138177, z: 0.3628072, w: 0.91699004}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Ryka_left.013
+      parentName: Ryka_left.012
+      position: {x: -0.00000001788139, y: 0.03918195, z: -0.000000059604638}
+      rotation: {x: -0.019556351, y: 0.21474777, z: -0.005397089, w: 0.97645885}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Ryka_left.014
+      parentName: Ryka_left.013
+      position: {x: 0.00000003814697, y: 0.02624024, z: -0.00000003814697}
+      rotation: {x: -0.017454509, y: -0.012144798, z: 0.03301278, w: 0.9992287}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999999}
+    - name: Ryka_left.014_end
+      parentName: Ryka_left.014
+      position: {x: -0, y: 0.020040685, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ryka_left.015
+      parentName: Ryka_left.018
+      position: {x: -0.020211034, y: 0.027104199, z: -0.019178294}
+      rotation: {x: -0.03201413, y: 0.030940764, z: 0.111424446, w: 0.9927751}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Ryka_left.016
+      parentName: Ryka_left.015
+      position: {x: -0.000000025629994, y: 0.043507647, z: -0.00000003814697}
+      rotation: {x: 0.012580747, y: 0.045872223, z: -0.017117888, w: 0.9987214}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Ryka_left.017
+      parentName: Ryka_left.016
+      position: {x: -0.00000005245208, y: 0.02594685, z: 0.000000057220454}
+      rotation: {x: -0.026786419, y: -0.08225281, z: -0.026993487, w: 0.9958857}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999994}
+    - name: Ryka_left.017_end
+      parentName: Ryka_left.017
+      position: {x: -0, y: 0.02280786, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Noga_right
+      parentName: Main
+      position: {x: 0.08459919, y: 0.020180088, z: 0.0002589236}
+      rotation: {x: 0.6979978, y: 0.16314219, z: 0.6865933, w: 0.12154579}
+      scale: {x: 1.0000001, y: 1, z: 0.9999986}
+    - name: Noga_right.001
+      parentName: Noga_right
+      position: {x: -0.000000002905726, y: 0.26662093, z: 0.0000000031245868}
+      rotation: {x: -0.025101349, y: 0.0037842852, z: 0.075063504, w: 0.9968556}
+      scale: {x: 0.9999997, y: 0.9999995, z: 1.0000007}
+    - name: Noga_right.002
+      parentName: Noga_right.001
+      position: {x: -2.8870997e-10, y: 0.29557115, z: 0.0000000036532943}
+      rotation: {x: 0.44575083, y: 0.5440732, z: -0.4269848, w: 0.5683085}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999998}
+    - name: Noga_right.003
+      parentName: Noga_right.002
+      position: {x: 0.0000000033900138, y: 0.120955154, z: -5.40167e-10}
+      rotation: {x: 0.006844992, y: -0.021917345, z: 0.026814798, w: 0.9993767}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Noga_right.003_end
+      parentName: Noga_right.003
+      position: {x: -0, y: 0.06789377, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Noga_left
+      parentName: Main
+      position: {x: -0.08459876, y: 0.020180088, z: 0.00037002217}
+      rotation: {x: 0.6975454, y: -0.16306257, z: -0.6870527, w: 0.12165344}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000019}
+    - name: Noga_left.001
+      parentName: Noga_left
+      position: {x: -0.0000000013038515, y: 0.2666209, z: 0.0000000090757375}
+      rotation: {x: -0.025101261, y: -0.003784398, z: -0.0750635, w: 0.9968556}
+      scale: {x: 1.0000002, y: 0.9999995, z: 0.9999998}
+    - name: Noga_left.002
+      parentName: Noga_left.001
+      position: {x: 0.000000005336478, y: 0.29557106, z: 0.000000009248032}
+      rotation: {x: 0.44575095, y: -0.54407257, z: 0.42698583, w: 0.56830823}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Noga_left.003
+      parentName: Noga_left.002
+      position: {x: 0.0000000017508862, y: 0.12095515, z: 0.0000000015553085}
+      rotation: {x: 0.006844994, y: 0.021916531, z: -0.026814705, w: 0.9993767}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999999}
+    - name: Noga_left.003_end
+      parentName: Noga_left.003
+      position: {x: -0, y: 0.06789377, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eyes
+      parentName: Man_2017_90Z(Clone)
+      position: {x: 6.938893e-20, y: 0, z: 0.000000009536742}
+      rotation: {x: -0.7071068, y: 1.9964659e-23, z: 8.110791e-24, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tooth
+      parentName: Man_2017_90Z(Clone)
+      position: {x: -1.8044203e-18, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 1.9964659e-23, z: 8.110791e-24, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
