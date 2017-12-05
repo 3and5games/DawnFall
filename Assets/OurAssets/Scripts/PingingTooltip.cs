@@ -22,17 +22,16 @@ public class PingingTooltip : MonoBehaviour {
 
 	void Update()
 	{
-		float zeroToOneSin = (Mathf.Sin (Time.time) + 1f) / 2;
-
 		if (aim) 
 		{
-			transform.position = Vector3.Lerp (transform.position, aim.position, Time.deltaTime*3);
+            float zeroToOneSin = (Mathf.Sin(Time.time) + 1f) / 2;
+            transform.position = Vector3.Lerp (transform.position, aim.position, Time.deltaTime*3);
 			transform.localScale = Vector3.Lerp (img.transform.localScale, Vector3.one*(zeroToOneSin/5+0.8f), Time.deltaTime*3);
 			img.color = Color.Lerp (img.color, new Color(img.color.r, img.color.g, img.color.b, zeroToOneSin/5+0.8f), Time.deltaTime*3);
 		} 
 		else 
 		{
-			img.color = Color.Lerp (img.color, new Color(img.color.r, img.color.g, img.color.b, 0), Time.deltaTime*3);
+            img.color = Color.Lerp (img.color, new Color(img.color.r, img.color.g, img.color.b, 0), Time.deltaTime*3);
 			img.transform.localScale = Vector3.Lerp (img.transform.localScale, Vector3.zero, Time.deltaTime*3);
 		}
 	}
@@ -42,10 +41,10 @@ public class PingingTooltip : MonoBehaviour {
 		InteractableManager.Instance.onInteractableObjectChanged += ObjectChanged;
 	}
 
-	private void ObjectChanged(IInteractable interactable)
+	private void ObjectChanged(GameObject interactableObject)
 	{
-		if (interactable!=null) {
-			aim = ((MonoBehaviour)interactable).transform;
+        if (interactableObject && interactableObject.GetComponent<IInteractable>()!=null) {
+			aim = interactableObject.transform;
 		} else {
 			aim = null;
 		}

@@ -10,6 +10,7 @@ public class MusicBox : MonoBehaviour, IInteractable
 	public AudioClip[] clips;
 	public AudioClip activate;
 	public AudioClip deactivate;
+    public MeshRenderer glassRenderer;
 
 	private bool playing = false;
 	private AudioSource _source;
@@ -27,20 +28,19 @@ public class MusicBox : MonoBehaviour, IInteractable
 
 	#region IInteractable implementation
 
+    [ContextMenu("activate")]
 	public void Activate ()
 	{
+        StopAllCoroutines();
 		if (playing) 
 		{
 			source.Stop ();
 			source.PlayOneShot (deactivate);
-			foreach(ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
-			{
-				var em = ps.emission;
-				em.rateOverTime = 0;
-				ps.Clear ();
-			}
 			playing = false;
-		} 
+            StartCoroutine(OffGlass());
+            //glassRenderer.material.SetFloat("_ColorMult", -1);
+
+        } 
 		else 
 		{
 			if (clips.Length > 0) 
@@ -49,25 +49,35 @@ public class MusicBox : MonoBehaviour, IInteractable
 				AudioClip clip = clips [Random.Range (0, clips.Length)];
 				source.PlayOneShot (activate);
 				source.PlayOneShot (clip);
-				foreach(ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
-				{
-					var em = ps.emission;
-					em.rateOverTime = 5;
-				}
 				Invoke ("Stop", clip.length);
-			}
+                StartCoroutine(OnGlass());
+                //glassRenderer.material.SetFloat("_ColorMult", 2);
+            }
 		}
 	}
 	#endregion
 
 	private void Stop()
 	{
-		foreach(ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
-		{
-			var em = ps.emission;
-			em.rateOverTime = 0;
-			ps.Clear ();
-		}
 		playing = false;
 	}
+
+    IEnumerator OffGlass()
+    {
+        while (glassRenderer.material.GetFloat("_ColorMult")>-1)
+        {
+            glassRenderer.material.SetFloat("_ColorMult", glassRenderer.material.GetFloat("_ColorMult")-Time.deltaTime*3);
+            yield return null;
+        }
+       
+    }
+
+    IEnumerator OnGlass()
+    {
+        while (glassRenderer.material.GetFloat("_ColorMult") < 2)
+        {
+            glassRenderer.material.SetFloat("_ColorMult", glassRenderer.material.GetFloat("_ColorMult") + Time.deltaTime*3);
+            yield return null;
+        }
+    }
 }

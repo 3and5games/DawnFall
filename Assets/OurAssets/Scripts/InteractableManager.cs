@@ -5,10 +5,28 @@ using System;
 
 public class InteractableManager : Singleton<InteractableManager> {
 
-	public Action<IInteractable> onInteractableObjectChanged;
+	public Action<GameObject> onInteractableObjectChanged;
 	public float interactionDistance = 2;
-	private IInteractable _interactableObject;
-	private IInteractable interactableObject
+
+    private bool interactionEnable = true;
+    public bool InteractionEnable
+    {
+        get
+        {
+            return interactionEnable;
+        }
+        set
+        {
+            interactionEnable = value;
+            if (!interactionEnable)
+            {
+                interactableObject = null;
+            }
+        }
+    }
+
+	private GameObject _interactableObject;
+	private GameObject interactableObject
 	{
 		get
 		{
@@ -31,10 +49,6 @@ public class InteractableManager : Singleton<InteractableManager> {
 		FindObjectOfType<SmoothCameraWithBumper> ().onObjectRaycastedMissed += ObjectRaycastMissed;
 	}
 
-	void OnDisable()
-	{
-		FindObjectOfType<SmoothCameraWithBumper> ().onObjectRaycasted -= ObjectRaycasted;
-	}
 
 	void ObjectRaycastMissed()
 	{
@@ -43,8 +57,13 @@ public class InteractableManager : Singleton<InteractableManager> {
 
 	void ObjectRaycasted(GameObject go, float distance)
 	{
+        if (!InteractionEnable)
+        {
+            return;
+        }
+
 		if (distance <= interactionDistance) {
-			interactableObject = go.GetComponent<IInteractable> ();
+			interactableObject = go;
 		} else 
 		{
 			interactableObject = null;
@@ -57,7 +76,10 @@ public class InteractableManager : Singleton<InteractableManager> {
 		{
 			if(interactableObject!=null)
 			{
-				interactableObject.Activate ();
+                foreach (IInteractable interactableBehaviour in interactableObject.GetComponentsInChildren<IInteractable>())
+                {
+                    interactableBehaviour.Activate();
+                }
 			}
 		}
 	}

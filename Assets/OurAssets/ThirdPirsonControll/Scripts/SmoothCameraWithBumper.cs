@@ -6,6 +6,8 @@ using System;
 
 public class SmoothCameraWithBumper : MonoBehaviour 
 {
+    private float cumulativeRotation;
+
 	public Action<ThirdPersonCameraMode> onModeChanged;
 	public Action<GameObject, float> onObjectRaycasted;
 	public Action onObjectRaycastedMissed;
@@ -14,7 +16,8 @@ public class SmoothCameraWithBumper : MonoBehaviour
 	public enum ThirdPersonCameraMode
 	{
 		Adventure,
-		Shooter
+		Shooter,
+        Observer
 	}
 
 	[SerializeField]
@@ -27,11 +30,12 @@ public class SmoothCameraWithBumper : MonoBehaviour
 		}
 		set
 		{
-			mode = value;
+            mode = value;
 			if(onModeChanged!=null)
 			{
 				onModeChanged.Invoke (mode);
 			}
+            cumulativeRotation = 0;
 		}
 	}
 
@@ -56,91 +60,120 @@ public class SmoothCameraWithBumper : MonoBehaviour
 
 	private void FixedUpdate() 
 	{
-		Vector3 wantedPosition = Vector3.zero;
-		Vector3 wantedCameraVector = Vector3.zero;
+        Vector3 wantedPosition = Vector3.zero;
+        Vector3 wantedCameraVector = Vector3.zero;
 
-		if (Input.GetMouseButton (1)) {
-			Mode = ThirdPersonCameraMode.Shooter;
-		} else {
-			Mode = ThirdPersonCameraMode.Adventure;
-		}
+        if (Mode == ThirdPersonCameraMode.Observer)
+        {
+            
+        }
+        else
+        {     
+            if (Mode != ThirdPersonCameraMode.Observer)
+            {
+                if (Input.GetMouseButton(1))
+                {
+                    Mode = ThirdPersonCameraMode.Shooter;
+                }
+                else
+                {
+                    Mode = ThirdPersonCameraMode.Adventure;
+                }
+            }
 
-		switch(mode)
-		{
-		case ThirdPersonCameraMode.Adventure:
-			wantedPosition = target.transform.position+cameraOffset+aimOffset;
-			wantedCameraVector = cameraRotation;
-			break;
-		case ThirdPersonCameraMode.Shooter:
-			wantedPosition = target.transform.position+shooterCameraOffset+shooterAimOffset;
-			wantedCameraVector = shooterCameraRotation;
-			break;
-		}
+            switch (Mode)
+            {
+                case ThirdPersonCameraMode.Adventure:
+                    wantedPosition = target.transform.position + cameraOffset + aimOffset;
+                    wantedCameraVector = cameraRotation;
+                    break;
+                case ThirdPersonCameraMode.Shooter:
+                    wantedPosition = target.transform.position + shooterCameraOffset + shooterAimOffset;
+                    wantedCameraVector = shooterCameraRotation;
+                    break;
+            }
 
-		//rotate wanted position with character
-		wantedPosition = RotatePointAroundPivot(wantedPosition, target.position+aimOffset, target.transform.rotation.eulerAngles);
+            //rotate wanted position with character
+            wantedPosition = RotatePointAroundPivot(wantedPosition, target.position + aimOffset, target.transform.rotation.eulerAngles);
+
+            // raycast from camera
+            RaycastHit hit;
+            Ray ray = new Ray(transform.position, transform.forward);
+            if (Physics.Raycast(ray, out hit, raycastDistance))
+            {
+                if (onObjectRaycasted != null)
+                {
+                    onObjectRaycasted.Invoke(hit.collider.gameObject, hit.distance);
+                }
+                if (hit.collider.gameObject.layer == ignoringLayer.LayerIndex)
+                {
+                    wantedPosition.x = hit.point.x;
+                    wantedPosition.z = hit.point.z;
+                    wantedPosition.y = Mathf.Lerp(hit.point.y + bumperCameraHeight, wantedPosition.y, Time.deltaTime * damping);
+
+                }
+
+                aimPosition = hit.point;
+
+            }
+            else
+            {
+                if (onObjectRaycastedMissed != null)
+                {
+                    onObjectRaycastedMissed.Invoke();
+                }
+            }
 
 
-		// raycast from camera
-		RaycastHit hit;
-		Ray ray = new Ray (transform.position, transform.forward);
-		if (Physics.Raycast (ray, out hit, raycastDistance)) {
-			if (onObjectRaycasted != null) {
-				onObjectRaycasted.Invoke (hit.collider.gameObject, hit.distance);
-			}
-			if (hit.collider.gameObject.layer == ignoringLayer.LayerIndex) {
-				wantedPosition.x = hit.point.x;
-				wantedPosition.z = hit.point.z;
-				wantedPosition.y = Mathf.Lerp (hit.point.y + bumperCameraHeight, wantedPosition.y, Time.deltaTime * damping);
 
-			}
-		
-				aimPosition = hit.point;
-		
-		} else 
-		{
-			if (onObjectRaycastedMissed != null) {
-				onObjectRaycastedMissed.Invoke ();
-			}
-		}
+            if (mode == ThirdPersonCameraMode.Shooter)
+            {
+                yAxisRotation += Input.GetAxis("Mouse Y");
+                yAxisRotation = Mathf.Clamp(yAxisRotation, -30, 30);
 
+                transform.rotation = target.transform.rotation * Quaternion.Euler(wantedCameraVector);
+                transform.Rotate(Vector3.left * yAxisRotation);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, target.transform.rotation * Quaternion.Euler(wantedCameraVector), Time.deltaTime * rotationDamping);
+            }
 
+        }
 
-		if (mode == ThirdPersonCameraMode.Shooter) 
-		{
-			yAxisRotation += Input.GetAxis ("Mouse Y");
-			yAxisRotation = Mathf.Clamp (yAxisRotation, -30, 30);
-
-			transform.rotation = target.transform.rotation*Quaternion.Euler(wantedCameraVector);
-			transform.Rotate (Vector3.left*yAxisRotation);
-		} else 
-		{
-			transform.rotation = Quaternion.Slerp(transform.rotation, target.transform.rotation*Quaternion.Euler(wantedCameraVector), Time.deltaTime * rotationDamping);
-		}
-
-		// check to see if there is anything behind the target
-		RaycastHit hitClip;
-		Ray rayClip = new Ray (target.transform.position+aimOffset, (-target.transform.position-aimOffset+wantedPosition).normalized * raycastDistance);
-
-		// cast the bumper ray out from rear and check to see if there is anything behind
-		Debug.DrawRay(rayClip.origin, rayClip.direction, Color.red);
-
-		if (Physics.Raycast (rayClip, out hitClip)) { 
-			float distance = Vector3.Distance (hitClip.point, target.transform.position + aimOffset);
-			float needDistance = Vector3.Distance (wantedPosition, target.transform.position + aimOffset);
-			if (distance < needDistance) {
-				Vector3 reflectVec = Vector3.Reflect(rayClip.direction, hitClip.normal);
-				transform.position = Vector3.Lerp (transform.position, hitClip.point+reflectVec*clipOffset, Time.deltaTime * damping*3);
-			} else {
-				transform.position = Vector3.Lerp (transform.position, wantedPosition, Time.deltaTime * damping);
-			}
-		} else 
-		{
-			transform.position = Vector3.Lerp (transform.position, wantedPosition, Time.deltaTime * damping);
-		}
+        CheckClipping(wantedPosition);
 	}
 
-	private Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles) {
+    private void CheckClipping(Vector3 wantedPosition)
+    {
+        // check to see if there is anything behind the target
+        RaycastHit hitClip;
+        Ray rayClip = new Ray(target.transform.position + aimOffset, (-target.transform.position - aimOffset + wantedPosition).normalized * raycastDistance);
+
+        // cast the bumper ray out from rear and check to see if there is anything behind
+        Debug.DrawRay(rayClip.origin, rayClip.direction, Color.red);
+
+        if (Physics.Raycast(rayClip, out hitClip))
+        {
+            float distance = Vector3.Distance(hitClip.point, target.transform.position + aimOffset);
+            float needDistance = Vector3.Distance(wantedPosition, target.transform.position + aimOffset);
+            if (distance < needDistance)
+            {
+                Vector3 reflectVec = Vector3.Reflect(rayClip.direction, hitClip.normal);
+                transform.position = Vector3.Lerp(transform.position, hitClip.point + reflectVec * clipOffset, Time.deltaTime * damping * 3);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * damping);
+            }
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * damping);
+        }
+    }
+
+    private Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles) {
 		Vector3 dir = point - pivot;
 		dir = Quaternion.Euler(angles) * dir;
 		point = dir + pivot;

@@ -20,6 +20,7 @@ public class ThirdPersonController : MonoBehaviour
 		Blocked = false;
 	}
 
+
 	void Update ()
 	{
 		if (Blocked == false) {
@@ -29,7 +30,10 @@ public class ThirdPersonController : MonoBehaviour
 		}
 		Move ();
 		Animate ();
-	}
+
+        animator.SetLookAtPosition(animator.GetBoneTransform(HumanBodyBones.Head).position + Camera.main.transform.forward);
+        animator.SetLookAtWeight(1f, .4f, 1f, 1f, .8f);
+    }
 
 	private void Animate ()
 	{
@@ -56,8 +60,10 @@ public class ThirdPersonController : MonoBehaviour
 	private void Move ()
 	{
 		var mouseHorizontal = Input.GetAxis ("Mouse X");
-		rotationSpeed = mouseHorizontal;
-		transform.Rotate (Vector3.up*mouseHorizontal);
+        var mouseVertical = Input.GetAxis("Mouse Y");
+        rotationSpeed = mouseHorizontal;
+		transform.GetChild(0).Rotate (Vector3.right*mouseVertical*5);
+        transform.GetChild(0).Rotate (Vector3.up*mouseHorizontal*5);
 		transform.Translate (sideSpeed * Time.deltaTime * SpeedMultiplyer, 0, Time.deltaTime * speed * SpeedMultiplyer);
 	}
 
