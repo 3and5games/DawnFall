@@ -76,15 +76,7 @@ obj/
 
 *.opendb
 
-WSATestCertificate.pfx
-WSATestCertificate.pfx.meta
-
 !*.obj
 !*.rsp
 !Assets/*.rsp
-!Assets/MRGuideIDE/Framework/AVProVideo/Plugins
-!Assets/MRGuideIDE/Framework/AVProVideo/Plugins/WSA
-!Assets/MRGuideIDE/Framework/AVProVideo/Plugins/WSA/UWP
-!Assets/MRGuideIDE/Contents/EmbeddedResources/Library
-!Assets/MRGuideIDE/Contents/EmbeddedResources/Library/Resources/Embedded/Library
 !/*.rsp
