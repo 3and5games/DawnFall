@@ -1,8 +1,18 @@
 ﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Shaders/SpriteOnTop.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/OurAssets/Scripts/DrinkingCup.cs">
     <Files>
+      <File FileName="Assets/OurAssets/ThirdPirsonControll/Scripts/ThirdPersonController.cs" Line="70" Column="77" />
       <File FileName="Assets/Resources/Shaders/SpriteOnTop.shader" Line="25" Column="21" />
+      <File FileName="Assets/ThirdPartyAssets/Cinemachine/Base/Runtime/Behaviours/CinemachineBrain.cs" Line="1" Column="1" />
+      <File FileName="Assets/OurAssets/Scripts/InteractableManager.cs" Line="48" Column="3" />
+      <File FileName="Assets/OurAssets/ThirdPirsonControll/Scripts/SmoothCameraWithBumper.cs" Line="35" Column="33" />
+      <File FileName="Assets/ThirdPartyAssets/Cinemachine/Base/Runtime/Behaviours/CinemachineBlendListCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets/CinemachineController.cs" Line="18" Column="3" />
+      <File FileName="Assets/OurAssets/ThirdPirsonControll/CrossHair.cs" Line="1" Column="1" />
+      <File FileName="Assets/OurAssets/Scripts/DrinkingCup.cs" Line="10" Column="19" />
+      <File FileName="Assets/OurAssets/Scripts/AnimatorOverdriver.cs" Line="49" Column="4" />
+      <File FileName="Assets/OurAssets/Scripts/MusicBox.cs" Line="7" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

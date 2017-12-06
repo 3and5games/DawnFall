@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class MusicBox : MonoBehaviour, IInteractable 
+public class MusicBox : MonoBehaviour
 {
 
 	public AudioClip[] clips;
