@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_POST_PROCESSING_STACK_V1</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -52,6 +52,51 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\OurAssets\ThirdPirsonControll\Scripts\UnityLayer\Editor\SingleUnityLayerProperyDrawer.cs" />
+     <Compile Include="Assets\OurAssets\Tools\Editor\SuperCombine.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineBasicMultiChannelPerlinEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineBlenderSettingsEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineBlendListCameraEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineBrainEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineClearShotEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineColliderEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineComposerEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineConfinerEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineExternalCameraEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineFramingTransposerEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineFreeLookEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineGroupComposerEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineHardLockToTargetEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineHardLookAtEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineMixingCameraEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineOrbitalTransposerEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachinePathEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachinePOVEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineScreenComposerGuides.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineSmoothPathEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineStateDrivenCameraEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineTargetGroupEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineTrackedDollyEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineTransposerEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineVirtualCameraBaseEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Editors\CinemachineVirtualCameraEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Menus\CinemachineMenu.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\PropertyDrawers\CinemachineBlendDefinitionPropertyDrawer.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\PropertyDrawers\CinemachineTagFieldPropertyDrawer.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\PropertyDrawers\GetSetDrawer.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\PropertyDrawers\LensSettingsPropertyDrawer.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\PropertyDrawers\MinDrawer.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Utility\BaseEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Utility\EmbeddedAssetHelpers.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Utility\SaveDuringPlay.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Utility\ScriptableObjectUtility.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Utility\SerializedPropertyHelper.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Windows\AboutWindow.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Windows\CinemachineColliderPrefs.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Base\Editor\Windows\CinemachineSettings.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Blackboard\Editor\ReactorEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\PostFX\Editor\CinemachinePostProcessingEditor.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\PostFX\Editor\PostFXAutoImport.cs" />
+     <Compile Include="Assets\ThirdPartyAssets\Cinemachine\Timeline\Editor\CinemachineShotEditor.cs" />
      <Compile Include="Assets\ThirdPartyAssets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
      <Compile Include="Assets\ThirdPartyAssets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
      <Compile Include="Assets\ThirdPartyAssets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
@@ -108,6 +153,8 @@
      <None Include="Assets\ThirdPartyAssets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
      <None Include="Assets\ThirdPartyAssets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
      <None Include="Assets\ThirdPartyAssets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+     <None Include="Assets\ThirdPartyAssets\Cinemachine\ReleaseNotes.txt" />
+     <None Include="Assets\Resources\Shaders\Glass.shader" />
      <None Include="Assets\ThirdPartyAssets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
      <None Include="Assets\ThirdPartyAssets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
      <None Include="Assets\ThirdPartyAssets\PostProcessing\Resources\Shaders\Common.cginc" />

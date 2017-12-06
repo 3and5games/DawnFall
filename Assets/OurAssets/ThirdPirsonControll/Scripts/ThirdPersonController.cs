@@ -8,6 +8,8 @@ public class ThirdPersonController : MonoBehaviour
 	public bool Blocked;
 	[SerializeField]
 	private float SpeedMultiplyer = 1;
+
+
 	private bool allowShooting = false;
 	private float animationLerpAmount = 3;
 	private float speed, sideSpeed, rotationSpeed;
@@ -62,8 +64,15 @@ public class ThirdPersonController : MonoBehaviour
 		var mouseHorizontal = Input.GetAxis ("Mouse X");
         var mouseVertical = Input.GetAxis("Mouse Y");
         rotationSpeed = mouseHorizontal;
-		transform.GetChild(0).Rotate (Vector3.right*mouseVertical*5);
-        transform.GetChild(0).Rotate (Vector3.up*mouseHorizontal*5);
+
+		float xAngle = Vector3.SignedAngle(transform.GetChild(0).forward, transform.forward, Vector3.right);
+
+		if(Mathf.Abs(xAngle)<60 || (xAngle<=-60f && mouseVertical<0)|| (xAngle>=60f && mouseVertical>0))
+		{
+			transform.GetChild(0).Rotate (-Vector3.right*mouseVertical*5);
+		}
+
+        transform.Rotate (Vector3.up*mouseHorizontal*5);
 		transform.Translate (sideSpeed * Time.deltaTime * SpeedMultiplyer, 0, Time.deltaTime * speed * SpeedMultiplyer);
 	}
 
