@@ -3,7 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Action
+  - Interactable
+  - Enemy
+  - Collectable
+  - Weapon
+  - LadderTrigger
+  - LookAt
+  - AutoCrouch
+  - ClimbUp
+  - StepUp
+  - JumpOver
+  - Ignore Ragdoll
+  - Boss
+  - PlayerUI
+  - Sters
+  - CompanionAI
+  - Ragdoll
   layers:
   - Default
   - TransparentFX
@@ -14,11 +31,11 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - CompanionAI
+  - Triggers
+  - StopMove
+  - HeadTrack
   - 
   - 
   - 
