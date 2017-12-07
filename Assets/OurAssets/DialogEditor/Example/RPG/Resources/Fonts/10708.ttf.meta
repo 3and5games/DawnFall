@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6c54e21bde5c2473f89764f1b7f6903c
+timeCreated: 1503621391
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Nostissimo 1
+  fontNames:
+  - Nostissimo 1
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
