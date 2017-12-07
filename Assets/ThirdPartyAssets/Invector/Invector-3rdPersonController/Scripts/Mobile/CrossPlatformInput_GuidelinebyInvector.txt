@@ -1,0 +1,9 @@
+
+Add on v1.1a HOTFIX
+
+- Our ThirdPersonController Template use the CrossPlatformInput Scripts from the StandardAssets
+along with our InvectorJoystick.cs that only modified the Original Joystick script to a circular movement 
+instead of a Square shape.
+
+- Do not delete the Standard Assets folder, otherwise our scripts will not work correctly for Mobile builds.
+- If you delete, you can import the package again and select only the missing CrossPlatform files.
