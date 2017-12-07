@@ -40,34 +40,29 @@ namespace Invector.CharacterController
         
         public virtual void Sprint(bool value)
         {
-            if(value)
+            if (isGrounded && !isCrouching)
             {
-                if (currentStamina > 0 && input.sqrMagnitude > 0.1f)
-                {
-                    if (isGrounded && !isCrouching)
-                        isSprinting = !isSprinting;
-                }
+                isSprinting = value;
             }
-            else if (currentStamina <= 0 || input.sqrMagnitude < 0.1f || actions || isStrafing && !strafeSpeed.walkByDefault && (direction >= 0.5 || direction <= -0.5 || speed <= 0))
+      
+         
+            if (currentStamina <= 0 || input.sqrMagnitude < 0.1f || actions || isStrafing && !strafeSpeed.walkByDefault && (direction >= 0.5 || direction <= -0.5 || speed <= 0))
             {                
                 isSprinting = false;
             }                
         }
 
-        public virtual void Crouch()
+        public virtual void Crouch(bool crouch)
         {                                    
             if (isGrounded && !actions)
             {
-                if (isCrouching && CanExitCrouch())
-                    isCrouching = false;
-                else
-                    isCrouching = true;
+                isCrouching = crouch;
             }                
         }
 
-        public virtual void Strafe()
+        public virtual void Strafe(bool strafe)
         {
-            isStrafing = !isStrafing;
+            isStrafing = strafe;
         }
 
         public virtual void Jump()

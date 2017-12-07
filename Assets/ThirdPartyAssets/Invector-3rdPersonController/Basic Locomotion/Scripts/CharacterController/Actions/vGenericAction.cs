@@ -15,7 +15,10 @@ namespace Invector.CharacterController.Actions
         public string actionTag = "Action";
         [Tooltip("Use root motion of the animation")]
         public bool useRootMotion = true;
-        
+        [Tooltip("Use root motion of the animation")]
+        public bool exitWithInput = false;
+
+
         [Header("--- Debug Only ---")]
         public vTriggerGenericAction triggerAction;        
         [Tooltip("Check this to enter the debug mode")]
@@ -53,8 +56,22 @@ namespace Invector.CharacterController.Actions
             TriggerActionInput();
         }
 
+        private void AnimationFinished()
+        {
+            triggerAction.OnAnimationFinished.Invoke();
+            tpInput.Unlock();
+        }
+
         protected virtual void TriggerActionInput()
         {
+           
+            if (actionInput.GetButtonDown())
+            {
+                tpInput.cc.animator.SetInteger("ActionState", tpInput.cc.animator.GetInteger("ActionState")+1);
+                tpInput.Block();
+                Invoke("AnimationFinished", triggerAction.animationTime);
+            }
+
             if (triggerAction == null) return;
 
             if(canTriggerAction)

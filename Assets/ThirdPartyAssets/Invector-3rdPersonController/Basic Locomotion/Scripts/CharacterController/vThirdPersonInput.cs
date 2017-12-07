@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 #if MOBILE_INPUT
 using UnityStandardAssets.CrossPlatformInput;
 #endif
@@ -42,6 +43,19 @@ namespace Invector.CharacterController
         public string customlookAtPoint;                    // generic string to change the CameraPoint of the Fixed Point Mode        
         [HideInInspector]
         public bool changeCameraState;                      // generic bool to change the CameraState        
+
+        public bool blocked = false;
+
+        public void Block()
+        {
+            blocked = true;
+        }
+
+        public void Unlock()
+        {
+            blocked = false;
+        }
+
         [HideInInspector]
         public bool smoothCameraState;                      // generic bool to know if the state will change with or without lerp  
         [HideInInspector]
@@ -141,15 +155,23 @@ namespace Invector.CharacterController
         protected virtual void LateUpdate()
         {
             if (cc == null || lockInput || Time.timeScale == 0) return;
-            InputHandle();                      // update input methods          
+            if (!blocked)
+            {
+                InputHandle();
+            }
+                                 // update input methods          
             UpdateCameraStates();               // update camera states  
         }
 
         protected virtual void FixedUpdate()
         {
             cc.AirControl();                    // update air behaviour
-            CameraInput();                      // update camera input
-            MoveToPoint();                      // isometric gameplay
+            CameraInput();
+            if (!blocked)
+            {
+                // update camera input
+                MoveToPoint();
+            }// isometric gameplay
         }
 
         protected virtual void Update()
@@ -262,22 +284,17 @@ namespace Invector.CharacterController
 
         protected virtual void StrafeInput()
         {
-            if (strafeInput.GetButtonDown())
-                cc.Strafe();
+            cc.Strafe(strafeInput.GetButton());
         }
 
         protected virtual void SprintInput()
         {
-            if (sprintInput.GetButtonDown())
-                cc.Sprint(true);
-            else
-                cc.Sprint(false);
+            cc.Sprint(sprintInput.GetButton());
         }
 
         protected virtual void CrouchInput()
         {
-            if (crouchInput.GetButtonDown())
-                cc.Crouch();
+            cc.Crouch(crouchInput.GetButton());
         }
 
         protected virtual void JumpInput()

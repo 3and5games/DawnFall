@@ -20,6 +20,7 @@ public class vTriggerGenericAction : vMonoBehaviour
     public string playAnimation;
     [Tooltip("Check the Exit Time of your animation and insert here")]
     public float endExitTimeAnimation = 0.8f;
+    public float animationTime = 2;
     [Tooltip("Select the transform you want to use as reference to the Match Target")]
     public AvatarTarget avatarTarget;
     [Tooltip("Check what position XYZ you want the matchTarget to work")]
@@ -45,6 +46,7 @@ public class vTriggerGenericAction : vMonoBehaviour
     public UnityEvent OnPlayerEnter;
     public UnityEvent OnPlayerStay;
     public UnityEvent OnPlayerExit;
+    public UnityEvent OnAnimationFinished;
 
     protected virtual void Start()
     {

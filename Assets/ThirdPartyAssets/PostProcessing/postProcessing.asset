@@ -71,11 +71,11 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 17.82
-      aperture: 3
-      focalLength: 171
+      focusDistance: 1
+      aperture: 3.6
+      focalLength: 46
       useCameraFov: 0
-      kernelSize: 0
+      kernelSize: 1
   motionBlur:
     m_Enabled: 0
     m_Settings:
@@ -85,17 +85,17 @@ MonoBehaviour:
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
-      lowPercent: 45
-      highPercent: 95
+      lowPercent: 19.815641
+      highPercent: 69.81567
       minLuminance: -5
       maxLuminance: 1
       keyValue: 0.25
       dynamicKeyValue: 1
-      adaptationType: 0
+      adaptationType: 1
       speedUp: 2
       speedDown: 1
-      logMin: -8
-      logMax: 4
+      logMin: -16
+      logMax: 1
   bloom:
     m_Enabled: 1
     m_Settings:
@@ -113,21 +113,21 @@ MonoBehaviour:
     m_Settings:
       tonemapping:
         tonemapper: 1
-        neutralBlackIn: 0.02
-        neutralWhiteIn: 10
-        neutralBlackOut: 0
-        neutralWhiteOut: 10
-        neutralWhiteLevel: 5.3
-        neutralWhiteClip: 10
+        neutralBlackIn: -0.073
+        neutralWhiteIn: 1
+        neutralBlackOut: -0.09
+        neutralWhiteOut: 1
+        neutralWhiteLevel: 2
+        neutralWhiteClip: 1
       basic:
         postExposure: 0
-        temperature: 0
-        tint: 0
-        hueShift: 0
-        saturation: 1
-        contrast: 1
+        temperature: 100
+        tint: 100
+        hueShift: 180
+        saturation: 2
+        contrast: 2
       channelMixer:
-        red: {x: 1, y: 0, z: 0}
+        red: {x: -2, y: -1.94, z: -2}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
@@ -288,24 +288,24 @@ MonoBehaviour:
   grain:
     m_Enabled: 0
     m_Settings:
-      colored: 1
-      intensity: 0.5
-      size: 1
-      luminanceContribution: 0.8
+      colored: 0
+      intensity: 0.825
+      size: 1.77
+      luminanceContribution: 0.252
   vignette:
     m_Enabled: 0
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.45
-      smoothness: 0.2
-      roundness: 1
+      intensity: 0.532
+      smoothness: 0.364
+      roundness: 0.627
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
   dithering:
-    m_Enabled: 0
+    m_Enabled: 1
   monitors:
     currentMonitorID: 0
     refreshOnPlay: 0

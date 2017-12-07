@@ -23,8 +23,8 @@ MonoBehaviour:
     smoothFollow: 10
     xMouseSensitivity: 3
     yMouseSensitivity: 3
-    yMinLimit: -80
-    yMaxLimit: 80
+    yMinLimit: -45
+    yMaxLimit: 45
     xMinLimit: -360
     xMaxLimit: 360
     rotationOffSet: {x: 8, y: 0, z: 0}
@@ -63,11 +63,11 @@ MonoBehaviour:
     cameraMode: 0
   - Name: Strafing
     forward: -1
-    right: 0.45
-    defaultDistance: 1.2
+    right: 0.73
+    defaultDistance: 0.6
     maxDistance: 1.5
     minDistance: 0.25
-    height: 1.6
+    height: 1.8
     smoothFollow: 20
     xMouseSensitivity: 1
     yMouseSensitivity: 1
