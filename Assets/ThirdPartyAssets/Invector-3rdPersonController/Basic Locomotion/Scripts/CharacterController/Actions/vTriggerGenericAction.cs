@@ -42,6 +42,8 @@ public class vTriggerGenericAction : vMonoBehaviour
     [Tooltip("Delay to run the OnDoAction Event")]
     public float onDoActionDelay;
 
+	public GameObject interractedGameobject;
+
     public UnityEvent OnDoAction;
     public UnityEvent OnPlayerEnter;
     public UnityEvent OnPlayerStay;
@@ -53,11 +55,22 @@ public class vTriggerGenericAction : vMonoBehaviour
         this.gameObject.tag = "Action";
         this.gameObject.layer = LayerMask.NameToLayer("Triggers");
         GetComponent<Collider>().isTrigger = true;
+
+		OnDoAction.AddListener (()=>{PingingTooltip.Instance.Hide ();});
+		OnPlayerExit.AddListener (()=>{PingingTooltip.Instance.Hide ();});
+		if(!interractedGameobject)
+		{
+			interractedGameobject = gameObject;
+		}
     }
 
     public virtual IEnumerator OnDoActionDelay(GameObject obj)
     {
         yield return new WaitForSeconds(onDoActionDelay);
+		if(!interractedGameobject)
+		{
+			interractedGameobject = gameObject;
+		}
         OnDoAction.Invoke();
     }
 

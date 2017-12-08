@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Invector.CharacterController;
 
 public class CrossHair : MonoBehaviour {
 	private Image crossHairImage;
@@ -18,12 +19,8 @@ public class CrossHair : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
-		FindObjectOfType<SmoothCameraWithBumper> ().onModeChanged += ModeChanged;
+	void Update () {
+		CrossHairImmage.enabled = FindObjectOfType<vThirdPersonInput> ().strafeInput.GetButton ();
 	}
-
-	private void ModeChanged(SmoothCameraWithBumper.ThirdPersonCameraMode mode)
-	{
-		CrossHairImmage.enabled = (mode == SmoothCameraWithBumper.ThirdPersonCameraMode.Shooter);
-	}
+				
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PingingTooltip : MonoBehaviour {
+public class PingingTooltip : Singleton<PingingTooltip> {
 
 	private Transform aim;
 

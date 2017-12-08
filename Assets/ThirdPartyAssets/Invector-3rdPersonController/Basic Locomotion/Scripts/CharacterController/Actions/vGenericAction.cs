@@ -65,7 +65,7 @@ namespace Invector.CharacterController.Actions
         protected virtual void TriggerActionInput()
         {
            
-            if (actionInput.GetButtonDown())
+			if (actionInput.GetButtonDown())
             {
                 tpInput.cc.animator.SetInteger("ActionState", tpInput.cc.animator.GetInteger("ActionState")+1);
                 tpInput.Block();
@@ -214,6 +214,7 @@ namespace Invector.CharacterController.Actions
                 triggerAction = _triggerAction;
                 canTriggerAction = true;
                 triggerAction.OnPlayerEnter.Invoke();
+				PingingTooltip.Instance.ObjectChanged ( triggerAction.interractedGameobject);
             }
             else
             {             
