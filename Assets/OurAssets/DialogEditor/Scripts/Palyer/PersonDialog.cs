@@ -7,6 +7,23 @@ namespace Dialoges
     [System.Serializable]
     public class PersonDialog : MonoBehaviour
     {
+        [System.Serializable]
+        public class DialogCameraPoint
+        {
+            public Transform follow, lookAt;
+            public Vector3 followOffset, lookAtOffset;
+
+            public DialogCameraPoint(Transform follow, Transform lookAt, Vector3 followOffset, Vector3 lookAtOffset)
+            {
+                this.follow = follow;
+                this.lookAt = lookAt;
+                this.followOffset = followOffset;
+                this.lookAtOffset = lookAtOffset;
+            }
+        }
+
+        public DialogCameraPoint[] points;
+
         [SerializeField]
         private Chain _personChain;
         public Chain PersonChain

@@ -4,28 +4,14 @@ using UnityEngine;
 using Cinemachine;
 using System.Linq;
 
-public class CinemachineController : MonoBehaviour {
+public class CinemachineController : Singleton<CinemachineController> {
 
+   
 	public Transform[] dialogPersons;
 	private int i;
 
-	void Start()
-	{
-		InitDialogCameras ();
-	}
 
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Return))
-		{
-			i++;
-			if(i>=dialogPersons.Length)
-			{
-				i = 0;
-			}
-			SetCam (dialogPersons[i]);
-		}
-	}
+	
 
 	public void SetCam(Transform t)
 	{
@@ -39,9 +25,6 @@ public class CinemachineController : MonoBehaviour {
 		}
 	}
 
-	private void InitDialogCameras()
-	{
-	}
 
 	private IEnumerator SetCameraWeight(int cameraId, int aimValue)
 	{
@@ -56,4 +39,6 @@ public class CinemachineController : MonoBehaviour {
 		}
 		yield return null;
 	}
+
+    
 }

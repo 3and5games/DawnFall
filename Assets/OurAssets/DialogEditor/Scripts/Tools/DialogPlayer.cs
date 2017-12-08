@@ -7,8 +7,11 @@ using System.Linq;
 
 namespace Dialoges
 {
+    [System.Serializable]
     public class DialogPlayer : Singleton<DialogPlayer>
     {
+        
+
         public Action<PersonDialog> onDialogChanged;
         public Action onFinishDialog;
 
@@ -28,6 +31,9 @@ namespace Dialoges
         public event PathEventHandler onPathGo;
         public State currentState;
 		private Path currentPath;
+
+        
+
         public void PlayState(State state, PersonDialog pd)
         {
             currentDialog = pd;
@@ -67,13 +73,10 @@ namespace Dialoges
 
 		private void Variants()
 		{
-			Debug.Log ("v1");
 			if(onVariantsIn!=null)
 			{
-				Debug.Log ("v2");
 				if (currentState.pathes.Where (p => PlayerResource.Instance.CheckCondition (p.condition) && p.auto).Count () == 0) 
 				{
-					Debug.Log ("v3");
 					onVariantsIn.Invoke (currentState);
 				}
 			}

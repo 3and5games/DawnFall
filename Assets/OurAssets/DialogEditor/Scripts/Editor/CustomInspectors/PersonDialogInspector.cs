@@ -14,15 +14,19 @@ namespace Dialoges
         private bool inspectedFlag = false;
         private QuestWindow qw;
         private List<Chain> inspectedChains = new List<Chain>();
+        private SerializedProperty cameraPoints;
 
         private void OnEnable()
         {
             dialog = (PersonDialog)target;
             dialogObject = new SerializedObject(dialog);
             dialogProperty = dialogObject.FindProperty("pathEvents");
+            cameraPoints = serializedObject.FindProperty("points");
         }
         public override void OnInspectorGUI()
         {
+            
+
             if (inspectedFlag != dialog.playing)
             {
                 if (dialog.playing)
@@ -88,6 +92,9 @@ namespace Dialoges
                     i++;
                 }
             }
+
+            EditorGUILayout.PropertyField(cameraPoints);
+            serializedObject.ApplyModifiedProperties();
         }
         private void AddPathes(Chain c, List<Path> newPathes, List<PathEvent> newEvents)
         {
