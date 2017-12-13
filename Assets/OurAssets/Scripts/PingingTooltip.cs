@@ -51,7 +51,7 @@ public class PingingTooltip : Singleton<PingingTooltip> {
 
 	void Awake()
 	{
-		//InteractableManager.Instance.onInteractableObjectChanged += ObjectChanged;
+		InteractableManager.Instance.onInteractableObjectChanged += ObjectChanged;
 	}
 
     public void Hide()

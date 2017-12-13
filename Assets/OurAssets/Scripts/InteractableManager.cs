@@ -45,8 +45,8 @@ public class InteractableManager : Singleton<InteractableManager> {
 
 	void OnEnable()
 	{
-		FindObjectOfType<SmoothCameraWithBumper> ().onObjectRaycasted += ObjectRaycasted;
-		FindObjectOfType<SmoothCameraWithBumper> ().onObjectRaycastedMissed += ObjectRaycastMissed;
+		//FindObjectOfType<SmoothCameraWithBumper> ().onObjectRaycasted += ObjectRaycasted;
+		//FindObjectOfType<SmoothCameraWithBumper> ().onObjectRaycastedMissed += ObjectRaycastMissed;
 	}
 
 

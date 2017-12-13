@@ -30,6 +30,7 @@ namespace Invector.CharacterController
         public GenericInput strafeInput = new GenericInput("Tab", "RightStickClick", "RightStickClick");
         public GenericInput sprintInput = new GenericInput("LeftShift", "LeftStickClick", "LeftStickClick");
         public GenericInput crouchInput = new GenericInput("C", "Y", "Y");
+		public GenericInput fireInput = new GenericInput("C", "Y", "Y");
 
         [Header("Camera Settings")]
         public GenericInput rotateCameraXInput = new GenericInput("Mouse X", "RightAnalogHorizontal", "Mouse X");
@@ -284,7 +285,11 @@ namespace Invector.CharacterController
 
         protected virtual void StrafeInput()
         {
-            cc.Strafe(strafeInput.GetButton());
+			if(strafeInput.GetButtonDown())
+			{
+				cc.Strafe(!cc.isStrafing);
+			}
+            
         }
 
         protected virtual void SprintInput()

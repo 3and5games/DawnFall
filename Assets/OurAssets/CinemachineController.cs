@@ -11,17 +11,21 @@ public class CinemachineController : Singleton<CinemachineController> {
 	private int i;
 
 
-	
-
-	public void SetCam(Transform t)
+	public void SetCam(int index)
 	{
-		StopAllCoroutines ();
-		foreach (Transform tr in dialogPersons) {
-			if (tr != t) {
-				StartCoroutine (SetCameraWeight (dialogPersons.ToList ().IndexOf (tr), 0));
-			} else {
-				StartCoroutine (SetCameraWeight (dialogPersons.ToList ().IndexOf (tr), 1));
+		StopAllCoroutines();
+		int i = 0;
+		foreach (CinemachineVirtualCameraBase c in GetComponent<CinemachineMixingCamera>().ChildCameras)
+		{
+			if (index != i)
+			{
+				StartCoroutine(SetCameraWeight(i, 0));
 			}
+			else
+			{
+				StartCoroutine(SetCameraWeight(i, 1));
+			}
+			i++;
 		}
 	}
 

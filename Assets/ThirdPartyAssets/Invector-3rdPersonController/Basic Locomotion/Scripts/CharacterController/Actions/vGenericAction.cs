@@ -26,8 +26,13 @@ namespace Invector.CharacterController.Actions
         public bool canTriggerAction;
         public bool isPlayingAnimation;
         public bool triggerActionOnce;
+		private bool inAction = false;
 
+		[HideInInspector]
+		public bool activated;
         protected vThirdPersonInput tpInput;
+
+		private Vector3 inPoint;
 
         #endregion
 
@@ -52,39 +57,44 @@ namespace Invector.CharacterController.Actions
 
         public virtual void LateUpdate()
         {
+			TriggerActionInput();
             AnimationBehaviour();
-            TriggerActionInput();
         }
 
         private void AnimationFinished()
         {
+			isPlayingAnimation = false;
+			tpInput.Unlock();
             triggerAction.OnAnimationFinished.Invoke();
-            tpInput.Unlock();
+			Debug.Log ("reset after delay");
+			ResetPlayerSettings();
+			canTriggerAction = true;
         }
 
         protected virtual void TriggerActionInput()
         {
-           
-			if (actionInput.GetButtonDown())
-            {
-                tpInput.cc.animator.SetInteger("ActionState", tpInput.cc.animator.GetInteger("ActionState")+1);
-                tpInput.Block();
-                Invoke("AnimationFinished", triggerAction.animationTime);
-            }
-
-            if (triggerAction == null) return;
-
+			if (triggerAction == null) return;
+		
             if(canTriggerAction)
             {
                 if ((triggerAction.autoAction && actionConditions) || (actionInput.GetButtonDown() && actionConditions))
                 {
-                    if (!triggerActionOnce)
+					if (!triggerActionOnce && !activated)
                     {
                         OnDoAction.Invoke(triggerAction);
                         TriggerAnimation();
                     }                        
                 }
             }
+
+			if (inAction && triggerAction.waitInputForExit && activated && actionInput.GetButtonDown())
+			{
+				canTriggerAction = false;
+				activated = false;
+				Debug.Log (triggerAction.animationTime);
+				Invoke("AnimationFinished", triggerAction.animationTime);
+				tpInput.cc.animator.SetInteger("ActionState", tpInput.cc.animator.GetInteger("ActionState")+1);
+			}
         }
 
         public virtual bool actionConditions
@@ -97,7 +107,7 @@ namespace Invector.CharacterController.Actions
 
         protected virtual void TriggerAnimation()
         {
-            if (debugMode) Debug.Log("TriggerAnimation");           
+             Debug.Log("TriggerAnimation");           
 
             // trigger the animation behaviour & match target
             if (!string.IsNullOrEmpty(triggerAction.playAnimation))
@@ -113,7 +123,7 @@ namespace Invector.CharacterController.Actions
             if (triggerAction.autoAction || triggerAction.destroyAfter) triggerActionOnce = true;
 
             // destroy the triggerAction if checked with destroyAfter
-            if (triggerAction.destroyAfter)            
+			if (triggerAction.destroyAfter)            
                 StartCoroutine(DestroyDelay(triggerAction));
         }
 
@@ -133,6 +143,7 @@ namespace Invector.CharacterController.Actions
                 {
                     if (debugMode) Debug.Log("Match Target...");
                     // use match target to match the Y and Z target 
+					inPoint = transform.position;
                     tpInput.cc.MatchTarget(triggerAction.matchTarget.transform.position, triggerAction.matchTarget.transform.rotation, triggerAction.avatarTarget, 
                         new MatchTargetWeightMask(triggerAction.matchTargetMask, 0), triggerAction.startMatchTarget, triggerAction.endMatchTarget);
                 }
@@ -144,9 +155,9 @@ namespace Invector.CharacterController.Actions
                     transform.rotation = Quaternion.Lerp(transform.rotation, triggerAction.transform.rotation, tpInput.cc.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
                 }
 
-                if (triggerAction.resetPlayerSettings && tpInput.cc.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= triggerAction.endExitTimeAnimation)
+				if (!triggerAction.waitInputForExit && triggerAction.resetPlayerSettings && tpInput.cc.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= triggerAction.endExitTimeAnimation)
                 {
-                    if (debugMode) Debug.Log("Finish Animation");
+                    Debug.Log("Finish Animation");
                     // after playing the animation we reset some values
                     ResetPlayerSettings();
                 }
@@ -162,16 +173,16 @@ namespace Invector.CharacterController.Actions
                     isPlayingAnimation = false;
                     return false;
                 }
-
-                if (!isPlayingAnimation && !string.IsNullOrEmpty(triggerAction.playAnimation) && tpInput.cc.baseLayerInfo.IsName(triggerAction.playAnimation))
-                {
-                    isPlayingAnimation = true;
-                    if (triggerAction != null) triggerAction.OnPlayerExit.Invoke();
-                    ApplyPlayerSettings();
-                }                    
-                else if(isPlayingAnimation && !string.IsNullOrEmpty(triggerAction.playAnimation) && !tpInput.cc.baseLayerInfo.IsName(triggerAction.playAnimation))
-                    isPlayingAnimation = false;
-
+					
+				if (!isPlayingAnimation && !string.IsNullOrEmpty (triggerAction.playAnimation) && tpInput.cc.baseLayerInfo.IsName (triggerAction.playAnimation)) {
+					isPlayingAnimation = true;
+					if (triggerAction != null)
+						triggerAction.OnPlayerExit.Invoke ();
+					ApplyPlayerSettings ();
+				} else if ( isPlayingAnimation && !string.IsNullOrEmpty (triggerAction.playAnimation) && !tpInput.cc.baseLayerInfo.IsName (triggerAction.playAnimation)) {
+					isPlayingAnimation = false;
+				
+				}
                 return isPlayingAnimation;
             }
         }
@@ -186,7 +197,7 @@ namespace Invector.CharacterController.Actions
 
         public override void OnActionStay(Collider other)
         {
-            if (other.gameObject.CompareTag(actionTag) && !isPlayingAnimation)
+			if (other.gameObject.CompareTag(actionTag) && !inAction)
             {
                 CheckForTriggerAction(other);
             }
@@ -225,8 +236,8 @@ namespace Invector.CharacterController.Actions
 
         protected virtual void ApplyPlayerSettings()
         {
-            if (debugMode) Debug.Log("ApplyPlayerSettings");
 
+			inAction = true;
             if (triggerAction.disableGravity)
             {
                 tpInput.cc._rigidbody.useGravity = false;               // disable gravity of the player
@@ -234,14 +245,16 @@ namespace Invector.CharacterController.Actions
                 tpInput.cc.isGrounded = true;                           // ground the character so that we can run the root motion without any issues
                 tpInput.cc.animator.SetBool("IsGrounded", true);        // also ground the character on the animator so that he won't float after finishes the climb animation
                 tpInput.cc.animator.SetInteger("ActionState", 1);       // set actionState 1 to avoid falling transitions     
-            }
-            if (triggerAction.disableCollision)
+				activated = true;
+			}
+            
+			if (triggerAction.disableCollision)
                 tpInput.cc._capsuleCollider.isTrigger = true;           // disable the collision of the player if necessary 
         }
 
         protected virtual void ResetPlayerSettings()
         {
-            if (debugMode) Debug.Log("Reset Player Settings");
+            Debug.Log("Reset Player Settings");
             if(!playingAnimation || tpInput.cc.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= triggerAction.endExitTimeAnimation)
             {
                 tpInput.cc.EnableGravityAndCollision(0f);             // enable again the gravity and collision
@@ -250,6 +263,7 @@ namespace Invector.CharacterController.Actions
 
             canTriggerAction = false;
             triggerActionOnce = false;
+			inAction = false;
         }
     }
 }

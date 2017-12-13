@@ -47,7 +47,7 @@ public class CameraModeController : Singleton<CameraModeController> {
             int i = 0;
             foreach (CinemachineVirtualCameraBase c in GetComponent<CinemachineMixingCamera>().ChildCameras)
             {
-                if (i != GetComponent<CinemachineMixingCamera>().ChildCameras.ToList().IndexOf(c))
+                if (index != i)
                 {
                     StartCoroutine(SetCameraWeight(i, 0));
                 }
@@ -77,6 +77,15 @@ public class CameraModeController : Singleton<CameraModeController> {
     {
         DialogPlayer.Instance.onFinishDialog += SetAdventureMode;
         DialogPlayer.Instance.onDialogChanged += SetDialog;
+		DialogPlayer.Instance.onPathGo += PathGo;
+		DialogPlayer.Instance.onVariantsIn += StateIn;
     }
 
+	private void PathGo(Path path){
+		GetComponent<CinemachineMixingCamera> ().ChildCameras [1].GetComponent<CinemachineController> ().SetCam (0);
+	}
+
+	private void StateIn(State state){
+		GetComponent<CinemachineMixingCamera> ().ChildCameras [1].GetComponent<CinemachineController> ().SetCam (1);
+	}
 }

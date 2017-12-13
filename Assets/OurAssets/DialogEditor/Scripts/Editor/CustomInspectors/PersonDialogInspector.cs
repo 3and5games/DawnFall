@@ -93,7 +93,7 @@ namespace Dialoges
                 }
             }
 
-            EditorGUILayout.PropertyField(cameraPoints);
+			EditorGUILayout.PropertyField (cameraPoints, true);
             serializedObject.ApplyModifiedProperties();
         }
         private void AddPathes(Chain c, List<Path> newPathes, List<PathEvent> newEvents)
@@ -135,5 +135,8 @@ namespace Dialoges
             dialogObject = new SerializedObject(dialog);
             dialogProperty = dialogObject.FindProperty("pathEvents");
         }
+
+
     }
+
 }

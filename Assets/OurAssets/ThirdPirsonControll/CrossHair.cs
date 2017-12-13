@@ -20,7 +20,7 @@ public class CrossHair : MonoBehaviour {
 
 	// Use this for initialization
 	void Update () {
-		CrossHairImmage.enabled = FindObjectOfType<vThirdPersonInput> ().strafeInput.GetButton ();
+		CrossHairImmage.enabled = FindObjectOfType<vThirdPersonController> ().isStrafing;
 	}
 				
 }

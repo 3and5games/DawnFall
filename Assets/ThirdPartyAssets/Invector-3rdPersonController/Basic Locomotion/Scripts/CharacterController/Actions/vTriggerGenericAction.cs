@@ -42,6 +42,8 @@ public class vTriggerGenericAction : vMonoBehaviour
     [Tooltip("Delay to run the OnDoAction Event")]
     public float onDoActionDelay;
 
+	public bool waitInputForExit;
+
 	public GameObject interractedGameobject;
 
     public UnityEvent OnDoAction;
@@ -71,6 +73,7 @@ public class vTriggerGenericAction : vMonoBehaviour
 		{
 			interractedGameobject = gameObject;
 		}
+		FindObjectOfType<vThirdPersonInput>().Block ();
         OnDoAction.Invoke();
     }
 
