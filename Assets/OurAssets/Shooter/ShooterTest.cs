@@ -81,7 +81,7 @@ public class ShooterTest : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		
-		int cw = currentWeapon+Mathf.RoundToInt( Input.GetAxisRaw ("Mouse ScrollWheel"));
+		int cw = currentWeapon+Mathf.RoundToInt(Input.GetAxisRaw("Mouse ScrollWheel")*10);
 		if(cw<0)
 		{
 			cw = weapons.Length - 1;

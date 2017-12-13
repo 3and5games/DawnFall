@@ -19,6 +19,7 @@ public class WFX_LightFlicker : MonoBehaviour
 
     public void Flick()
     {
+        CancelInvoke("Off");
         GetComponent<Light>().enabled = true;
         Invoke("Off", time);
     }

@@ -157,7 +157,7 @@ MonoBehaviour:
   source: {fileID: 4318349558635070}
   pullBackTime: 1
   pullOutTime: 1
-  ForceMultiplyer: 1
+  ForceMultiplyer: 2500
   fireRate: 0.2
   reloadTime: 3
   Capacity: 20

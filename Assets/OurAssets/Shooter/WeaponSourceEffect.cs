@@ -28,12 +28,29 @@ public class WeaponSourceEffect: MonoBehaviour
             flicker.Flick();
         }
 
+        foreach (LineRenderer lr in GetComponentsInChildren<LineRenderer>())
+        {
+            CancelInvoke("DisableLineRenderers");
+            lr.enabled = true;
+            lr.SetPosition(0, lr.transform.position);
+            lr.SetPosition(1, aim);
+            Invoke("DisableLineRenderers", 0.5f);
+        }
+
 		foreach(ProjectileLauncher launcher in GetComponentsInChildren<ProjectileLauncher>())
 		{
 			Debug.Log ("launch");
 			launcher.Launch (aim);
 		}
         Invoke("Destroy", 5);
+    }
+
+    private void DisableLineRenderers()
+    {
+        foreach (LineRenderer lr in GetComponentsInChildren<LineRenderer>())
+        {
+            lr.enabled = false;
+        }
     }
 
     private void OnDestroy()

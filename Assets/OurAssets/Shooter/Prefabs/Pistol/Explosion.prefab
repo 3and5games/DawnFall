@@ -23227,12 +23227,12 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -23311,8 +23311,13 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 0
-    m_Bursts: []
+    m_BurstCount: 1
+    m_Bursts:
+    - time: 0
+      minCount: 10
+      maxCount: 10
+      cycleCount: 1
+      repeatInterval: 0.01
   SizeModule:
     enabled: 0
     curve:
@@ -26149,7 +26154,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: d48723a9122613a46a57c70406594587, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -47,6 +47,7 @@ public class Bomb : MonoBehaviour {
 			flicker.Flick();
 		}
 
+        Destroy(explosion, 10);
 		Destroy (gameObject);
 	}
 }
