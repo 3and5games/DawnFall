@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class RangeWeapon : MonoBehaviour
 {
+    public bool throwingWeapon = false;
+    public float throwDelay = 1f;
+
     public GameObject WeaponAimEffect, WeaponSourceEffect, WeaponBulletEfect;
     public Transform source;
     private WeaponSourceEffect sourceEffect;
