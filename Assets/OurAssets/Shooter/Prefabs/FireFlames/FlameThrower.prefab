@@ -150,8 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d036c41cfb4dcd1448a2874144c3ab22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponAimEffect: {fileID: 0}
-  WeaponSourceEffect: {fileID: 1738416495654084, guid: 2cdcae3b5a7632541a61e9e2bf46fb06,
+  WeaponAimEffect: {fileID: 1381909135829978, guid: d30ed45a077ae7a4c943b22ce25eadaa,
+    type: 2}
+  WeaponSourceEffect: {fileID: 1668297873576728, guid: 5814fb23040c14964ad502a73b327978,
     type: 2}
   source: {fileID: 4072636467988438}
   pullBackTime: 1

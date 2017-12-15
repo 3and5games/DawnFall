@@ -7,13 +7,13 @@ public class Cone {
 
 	public float radius;
 	public float angle;
-	public Vector3 offsetRotation;
+	//public Vector3 offsetRotation;
 
-	public Cone(float radius, float angle, Vector3 offsetRotation)
+	public Cone(float radius, float angle)
 	{
 		this.radius = radius;
 		this.angle = angle;
-		this.offsetRotation = offsetRotation;
+		//this.offsetRotation = offsetRotation;
 	}
 
 	public Collider[] ConeCast(Vector3 position, Vector3 direction)
@@ -22,7 +22,7 @@ public class Cone {
 		Collider[] overlaped = Physics.OverlapSphere (position, radius);
 		foreach(Collider c in overlaped)
 		{
-			if(Vector3.Angle(c.transform.position - position, Quaternion.Euler(offsetRotation)*direction)<=angle/2)
+			if(Vector3.Angle(c.transform.position - position, direction)<=angle/2)
 			{
 				result.Add (c);
 			}

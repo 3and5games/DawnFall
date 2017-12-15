@@ -21,11 +21,11 @@ RenderSettings:
   m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 0.99716026, b: 0.89705884, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.30147058, g: 0.30147058, b: 0.30147058, a: 1}
   m_AmbientGroundColor: {r: 0.30147058, g: 0.30147058, b: 0.30147058, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
   m_HaloStrength: 0.5
@@ -30616,6 +30616,7 @@ GameObject:
   - component: {fileID: 1396994468}
   - component: {fileID: 1396994467}
   - component: {fileID: 1396994474}
+  - component: {fileID: 1396994475}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -30788,6 +30789,18 @@ MonoBehaviour:
     keyboardAxisInvert: 0
     mobileAxisInvert: 0
   crouchInput:
+    useInput: 1
+    isAxisInUse: 0
+    keyboard: C
+    keyboardAxis: 0
+    joystick: Y
+    joystickAxis: 0
+    mobile: Y
+    mobileAxis: 0
+    joystickAxisInvert: 0
+    keyboardAxisInvert: 0
+    mobileAxisInvert: 0
+  fireInput:
     useInput: 1
     isAxisInUse: 0
     keyboard: C
@@ -31076,6 +31089,24 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &1396994475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396994466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc05212cfdad0e4a8e2568a77ed2477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  weapons:
+  - {fileID: 0}
+  - {fileID: 1199267764975276, guid: e08e730c73e02db41b4c5c253e51a9b1, type: 2}
+  - {fileID: 1491627212232918, guid: a91ba6e9fa5a846d68bc497059c54d61, type: 2}
+  - {fileID: 1216947169087946, guid: 692f89d05aef042b29c778944ef00535, type: 2}
+  - {fileID: 1492133695612944, guid: 762b0d836124a4d79b34ef155bfed7a3, type: 2}
 --- !u!1 &1401584425
 GameObject:
   m_ObjectHideFlags: 0

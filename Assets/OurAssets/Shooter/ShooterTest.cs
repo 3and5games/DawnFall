@@ -16,7 +16,6 @@ public class ShooterTest : MonoBehaviour {
 		{
 			if(!cc)
 			{
-				Debug.Log ("init");
 				cc = GetComponent<vThirdPersonController> ();
 			}
 			return cc;
@@ -69,7 +68,6 @@ public class ShooterTest : MonoBehaviour {
 	void Start()
 	{
 		controller.OnStrafingChanged += (bool strafing) => {
-			Debug.Log(strafing);
 			if (!strafing || weapons.Length == 1) {
 				CurrentWeapon = 0;
 			} else {

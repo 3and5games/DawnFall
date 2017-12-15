@@ -1,13 +1,19 @@
-﻿using System;
+﻿using Downfall;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeWeapon : MonoBehaviour {
-
-    public GameObject WeaponAimEffect, WeaponSourceEffect;
+public class RangeWeapon : MonoBehaviour
+{
+    public GameObject WeaponAimEffect, WeaponSourceEffect, WeaponBulletEfect;
     public Transform source;
     private WeaponSourceEffect sourceEffect;
+
+    [Range(0,45)]
+    public float ShiftAngle = 0;
+
+    public int bulletInShoot = 1;
 
 	public float pullBackTime, pullOutTime;
 	public float ForceMultiplyer = 1;
@@ -75,33 +81,43 @@ public class RangeWeapon : MonoBehaviour {
             Reload();
         }
 
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
-        {
-            if (!sourceEffect)
-            {
-                sourceEffect = Instantiate(WeaponSourceEffect).GetComponent<WeaponSourceEffect>();
-            }
-            sourceEffect.Init(hit, source);
+        
+        WeaponBulletEffect be = Instantiate(WeaponBulletEfect).GetComponent<WeaponBulletEffect>();
+    
 
-			Rigidbody collidedRigidbody =  hit.collider.GetComponent<Rigidbody> ();
-			if(collidedRigidbody)
-			{
-				collidedRigidbody.AddForce ((hit.point -Camera.main.transform.position).normalized*ForceMultiplyer);
-			}
-			if(WeaponAimEffect){
-				Instantiate(WeaponAimEffect).GetComponent<WeaponAimEffect>().Init(hit);
-			}
-            
-        }
-        else
+        for (int i = 0; i < bulletInShoot;i++)
         {
+        Vector3 aimVector = Tools.RotatePointAroundPivot(Camera.main.transform.forward, Camera.main.transform.position, new Vector3(UnityEngine.Random.Range(-ShiftAngle, ShiftAngle), UnityEngine.Random.Range(-ShiftAngle, ShiftAngle), 0));
+
+            
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, aimVector, out hit))
+            {    
+                Rigidbody collidedRigidbody = hit.collider.GetComponent<Rigidbody>();
+                if (collidedRigidbody)
+                {
+                    collidedRigidbody.AddForce((hit.point - Camera.main.transform.position).normalized * ForceMultiplyer);
+                }
+                if (WeaponAimEffect) {
+                    Instantiate(WeaponAimEffect).GetComponent<WeaponAimEffect>().Init(hit);
+                }
+
+                be.Init(hit, source);        
+            }
+            else
+            {
+                be.Init(Camera.main.transform.forward*100, source);
+            }
+        }
+     
             if (!sourceEffect)
             {
                 sourceEffect = Instantiate(WeaponSourceEffect).GetComponent<WeaponSourceEffect>();
             }
-            sourceEffect.Init(Camera.main.transform.position + Camera.main.transform.forward * 100, source);
-        }
+
+        sourceEffect.Init(source);
+       
 
     }
+
 }
