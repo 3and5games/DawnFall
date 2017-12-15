@@ -103,7 +103,7 @@ namespace Invector.CharacterController
 
         public void LocomotionAnimation()
         {            
-            animator.SetBool("IsStrafing", isStrafing);
+            animator.SetBool("IsStrafing", IsStrafing);
             animator.SetBool("IsCrouching", isCrouching);
             animator.SetBool("IsGrounded", isGrounded);
             animator.SetBool("isDead", isDead);
@@ -112,7 +112,7 @@ namespace Invector.CharacterController
             if (!isGrounded)
                 animator.SetFloat("VerticalVelocity", verticalVelocity);
 
-            if (isStrafing)
+            if (IsStrafing)
             {
                 // strafe movement get the input 1 or -1
                 animator.SetFloat("InputHorizontal", !stopMove && !lockMovement ? direction : 0f, 0.25f, Time.deltaTime);
@@ -138,7 +138,7 @@ namespace Invector.CharacterController
                 transform.rotation = animator.rootRotation;
 
                 // strafe extra speed
-                if (isStrafing)
+                if (IsStrafing)
                 {
                     if (strafeInput <= 0.5f)
                         base.ControlSpeed(base.strafeSpeed.walkSpeed);
@@ -150,7 +150,7 @@ namespace Invector.CharacterController
                     if (isCrouching)
                         base.ControlSpeed(base.strafeSpeed.crouchSpeed);
                 }
-                else if (!isStrafing)
+                else if (!IsStrafing)
                 {
                     // free extra speed                
                     if (speed <= 0.5f)
@@ -210,7 +210,7 @@ namespace Invector.CharacterController
             {
                 autoCrouch = true;
 
-                if (isStrafing && (input != Vector2.zero || speed > 0.25f))
+                if (IsStrafing && (input != Vector2.zero || speed > 0.25f))
                 {
                     // check the right direction for rolling if you are strafing
                     Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDirection, 25f * Time.fixedDeltaTime, 0.0f);

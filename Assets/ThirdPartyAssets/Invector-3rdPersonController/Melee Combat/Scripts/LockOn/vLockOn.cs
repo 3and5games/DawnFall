@@ -104,9 +104,9 @@ public class vLockOn : vLockOnBehaviour
         if (!tpInput.cc.locomotionType.Equals(vThirdPersonMotor.LocomotionType.OnlyStrafe))
         {
             if (strafeWhileLockOn && isLockingOn && tpInput.tpCamera.lockTarget != null)
-                tpInput.cc.isStrafing = true;
+                tpInput.cc.IsStrafing = true;
             else
-                tpInput.cc.isStrafing = false;
+                tpInput.cc.IsStrafing = false;
         }
     }
 

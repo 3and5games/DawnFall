@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 500
-  projectile: {fileID: 1361542104417184, guid: 51b6719ce9b764762a2e83fca4d76a7e, type: 2}
+  projectile: {fileID: 1467251090217132, guid: 51b6719ce9b764762a2e83fca4d76a7e, type: 2}
   angularForce: 1000
 --- !u!198 &198053447432826188
 ParticleSystem:

@@ -16,6 +16,7 @@ public class ShooterTest : MonoBehaviour {
 		{
 			if(!cc)
 			{
+				Debug.Log ("init");
 				cc = GetComponent<vThirdPersonController> ();
 			}
 			return cc;
@@ -65,6 +66,19 @@ public class ShooterTest : MonoBehaviour {
 		}
 	}
 
+	void Start()
+	{
+		controller.OnStrafingChanged += (bool strafing) => {
+			Debug.Log(strafing);
+			if (!strafing || weapons.Length == 1) {
+				CurrentWeapon = 0;
+			} else {
+				CurrentWeapon = 1;
+			}
+		};
+	}
+
+
 	void TakeWeapon()
 	{
 		if(weapons[currentWeapon])
@@ -94,13 +108,13 @@ public class ShooterTest : MonoBehaviour {
 
 		if(weapon)
 		{
-        if (Input.GetMouseButtonDown(0) && GetComponent<vThirdPersonController>().isStrafing)
+        if (Input.GetMouseButtonDown(0) && GetComponent<vThirdPersonController>().IsStrafing)
         {	
 				animator.SetBool ("Shooting", true);
             weapon.StartShooting();          
         }
 
-        if (Input.GetMouseButtonUp(0) || !GetComponent<vThirdPersonController>().isStrafing)
+        if (Input.GetMouseButtonUp(0) || !GetComponent<vThirdPersonController>().IsStrafing)
         {
 				animator.SetBool ("Shooting", false);
             weapon.StopShooting();

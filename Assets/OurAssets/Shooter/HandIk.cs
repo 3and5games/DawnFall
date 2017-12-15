@@ -25,7 +25,7 @@ public class HandIk : MonoBehaviour {
 
 	void OnAnimatorIK(int layerIndex)
 	{
-		if (FindObjectOfType<vThirdPersonController>().isStrafing) {
+		if (FindObjectOfType<vThirdPersonController>().IsStrafing) {
 			force += Time.deltaTime/5;
 		} else {
 			force -= Time.deltaTime/5;
@@ -35,7 +35,7 @@ public class HandIk : MonoBehaviour {
 
 		Vector3 aim = Camera.main.transform.position + Camera.main.transform.forward * 30;
 
-		if (FindObjectOfType<vThirdPersonController>().isStrafing)
+		if (FindObjectOfType<vThirdPersonController>().IsStrafing)
 		{
 			//animator.SetIKRotationWeight(AvatarIKGoal.RightHand, force);
 			//animator.SetIKPositionWeight(AvatarIKGoal.RightHand, force);

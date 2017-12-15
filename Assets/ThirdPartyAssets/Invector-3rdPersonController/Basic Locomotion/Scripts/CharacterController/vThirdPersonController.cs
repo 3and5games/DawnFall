@@ -46,7 +46,7 @@ namespace Invector.CharacterController
             }
       
          
-            if (currentStamina <= 0 || input.sqrMagnitude < 0.1f || actions || isStrafing && !strafeSpeed.walkByDefault && (direction >= 0.5 || direction <= -0.5 || speed <= 0))
+            if (currentStamina <= 0 || input.sqrMagnitude < 0.1f || actions || IsStrafing && !strafeSpeed.walkByDefault && (direction >= 0.5 || direction <= -0.5 || speed <= 0))
             {                
                 isSprinting = false;
             }                
@@ -62,7 +62,7 @@ namespace Invector.CharacterController
 
         public virtual void Strafe(bool strafe)
         {
-            isStrafing = strafe;
+            IsStrafing = strafe;
         }
 
         public virtual void Jump()

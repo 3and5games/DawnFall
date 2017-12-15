@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class WeaponSourceEffect: MonoBehaviour
 {
-    
+
+	private Vector3 aimPoint = Vector3.zero;
 
     public void Init(RaycastHit hit, Transform source)
     {
@@ -12,11 +13,12 @@ public class WeaponSourceEffect: MonoBehaviour
 
     public void Init(Vector3 aim, Transform source)
     {
+		aimPoint = aim;
 		Debug.Log ("Init");
         CancelInvoke("Destroy");
         transform.SetParent(source);
         transform.localPosition = Vector3.zero;
-        transform.LookAt(aim);
+		transform.rotation = Quaternion.LookRotation (aim - transform.position, transform.up);
         transform.localScale = Vector3.one;
 
         foreach (ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
@@ -32,9 +34,7 @@ public class WeaponSourceEffect: MonoBehaviour
         {
             CancelInvoke("DisableLineRenderers");
             lr.enabled = true;
-            lr.SetPosition(0, lr.transform.position);
-            lr.SetPosition(1, aim);
-            Invoke("DisableLineRenderers", 0.5f);
+			Invoke ("DisableLineRenderers", 0.1f);
         }
 
 		foreach(ProjectileLauncher launcher in GetComponentsInChildren<ProjectileLauncher>())
@@ -44,6 +44,8 @@ public class WeaponSourceEffect: MonoBehaviour
 		}
         Invoke("Destroy", 5);
     }
+
+
 
     private void DisableLineRenderers()
     {
@@ -57,4 +59,13 @@ public class WeaponSourceEffect: MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+	void Update()
+	{
+		foreach (LineRenderer lr in GetComponentsInChildren<LineRenderer>())
+		{
+			lr.SetPosition (0, lr.transform.position);
+			lr.SetPosition (1, aimPoint);
+		}
+	}
 }

@@ -44,7 +44,7 @@ namespace Invector
         void ChangeSpeed()
         {
             currentMoveSet = (int)Mathf.Round(cc.animator.GetFloat("MoveSet_ID"));
-            var strafing = cc.isStrafing;
+            var strafing = cc.IsStrafing;
             if (strafing)
             {
                 var extraSpeed = listStrafe.Find(l => l.moveset == currentMoveSet);

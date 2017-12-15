@@ -97,6 +97,8 @@ namespace Invector.CharacterController
         [Tooltip("Turn the Ragdoll On when falling at high speed (check VerticalVelocity) - leave the value with 0 if you don't want this feature")]
         public float ragdollVel = -16f;
 
+		public Action<bool> OnStrafingChanged;
+
         protected float groundDistance;
         public RaycastHit groundHit;        
 
@@ -115,6 +117,23 @@ namespace Invector.CharacterController
             isSliding,
             stopMove,
             autoCrouch;
+
+		public bool IsStrafing
+		{
+			get
+			{
+				return isStrafing;
+			}
+			set
+			{
+				isStrafing = value;
+				if(OnStrafingChanged!=null)
+				{
+					OnStrafingChanged.Invoke (isStrafing);
+				}
+			}
+		}
+
 
         // action bools
         [HideInInspector]
@@ -398,8 +417,8 @@ namespace Invector.CharacterController
         {
             get
             {
-                if (locomotionType.Equals(LocomotionType.OnlyStrafe)) isStrafing = true;
-                return !isStrafing && !landHigh && !ragdolled && !locomotionType.Equals(LocomotionType.OnlyStrafe) || locomotionType.Equals(LocomotionType.OnlyFree);
+                if (locomotionType.Equals(LocomotionType.OnlyStrafe)) IsStrafing = true;
+                return !IsStrafing && !landHigh && !ragdolled && !locomotionType.Equals(LocomotionType.OnlyStrafe) || locomotionType.Equals(LocomotionType.OnlyFree);
             }
         }
 
@@ -505,7 +524,7 @@ namespace Invector.CharacterController
                 var velX = transform.right * velocity * direction;
                 velX.x = _rigidbody.velocity.x;
 
-                if (isStrafing)
+                if (IsStrafing)
                 {
                     Vector3 v = (transform.TransformDirection(new Vector3(input.x, 0, input.y)) * (velocity > 0 ? velocity : 1f));
                     v.y = _rigidbody.velocity.y;
@@ -579,7 +598,7 @@ namespace Invector.CharacterController
 
             if (jumpAirControl)
             {
-                if (isStrafing)
+                if (IsStrafing)
                 {
                     _rigidbody.velocity = new Vector3(velX.x, velY.y, _rigidbody.velocity.z);
                     var vel = transform.forward * (jumpForward * speed) + transform.right * (jumpForward * direction);
@@ -716,7 +735,7 @@ namespace Invector.CharacterController
         /// <returns></returns>
         public virtual float GroundAngleFromDirection()
         {
-            var dir = isStrafing && input.magnitude > 0 ? (transform.right * input.x + transform.forward * input.y).normalized : transform.forward;
+            var dir = IsStrafing && input.magnitude > 0 ? (transform.right * input.x + transform.forward * input.y).normalized : transform.forward;
             var movimentAngle = Vector3.Angle(dir, groundHit.normal) - 90;
             return movimentAngle;
         }
@@ -771,15 +790,15 @@ namespace Invector.CharacterController
             if (input.sqrMagnitude < 0.1 || !isGrounded) return false;
 
             var _hit = new RaycastHit();
-            var _movementDirection = isStrafing && input.magnitude > 0 ? (transform.right * input.x + transform.forward * input.y).normalized : transform.forward;
+            var _movementDirection = IsStrafing && input.magnitude > 0 ? (transform.right * input.x + transform.forward * input.y).normalized : transform.forward;
             Ray rayStep = new Ray((transform.position + new Vector3(0, stepOffsetEnd, 0) + _movementDirection * ((_capsuleCollider).radius + 0.05f)), Vector3.down);
 
             if (Physics.Raycast(rayStep, out _hit, stepOffsetEnd - stepOffsetStart, groundLayer) && !_hit.collider.isTrigger)
             {
                 if (_hit.point.y >= (transform.position.y) && _hit.point.y <= (transform.position.y + stepOffsetEnd))
                 {
-                    var _speed = isStrafing ? Mathf.Clamp(input.magnitude, 0, 1) : speed;
-                    var velocityDirection = isStrafing ? (_hit.point - transform.position) : (_hit.point - transform.position).normalized;
+                    var _speed = IsStrafing ? Mathf.Clamp(input.magnitude, 0, 1) : speed;
+                    var velocityDirection = IsStrafing ? (_hit.point - transform.position) : (_hit.point - transform.position).normalized;
                     _rigidbody.velocity = velocityDirection * stepSmooth * (_speed * (velocity > 1 ? velocity : 1));
                     return true;
                 }
@@ -939,7 +958,7 @@ namespace Invector.CharacterController
                     "sliding = " + isSliding.ToString() + "\n" +
                     "sprinting = " + isSprinting.ToString() + "\n" +
                     "crouch = " + isCrouching.ToString() + "\n" +
-                    "strafe = " + isStrafing.ToString() + "\n" +                    
+                    "strafe = " + IsStrafing.ToString() + "\n" +                    
                     "landHigh = " + landHigh.ToString() + "\n" +
 
                     "\n" + "--- Actions Bools ---" + "\n" +
@@ -967,7 +986,7 @@ namespace Invector.CharacterController
                 Ray ray4 = new Ray(transform.position + new Vector3(0, colliderHeight / 3.5f, 0), transform.forward);
                 Debug.DrawRay(ray4.origin, ray4.direction * 1f, Color.cyan);
                 // debug stepOffset
-                var dir = isStrafing && input.magnitude > 0 ? (transform.right * input.x + transform.forward * input.y).normalized : transform.forward;
+                var dir = IsStrafing && input.magnitude > 0 ? (transform.right * input.x + transform.forward * input.y).normalized : transform.forward;
                 Ray ray5 = new Ray((transform.position + new Vector3(0, stepOffsetEnd, 0) + dir * ((_capsuleCollider).radius + 0.05f)), Vector3.down);
                 Debug.DrawRay(ray5.origin, ray5.direction * (stepOffsetEnd - stepOffsetStart), Color.yellow);
             }

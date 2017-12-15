@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d036c41cfb4dcd1448a2874144c3ab22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponAimEffect: {fileID: 1840860410400772, guid: 0638a0d7aa28a1f498a590bb7b93e714,
+  WeaponAimEffect: {fileID: 1285384605721482, guid: f6a562cc80e6c4f6da377273f027fa8c,
     type: 2}
   WeaponSourceEffect: {fileID: 1196072994791042, guid: c336a26e3de1cca44ab3a8dbe76cae45,
     type: 2}

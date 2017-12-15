@@ -287,7 +287,7 @@ namespace Invector.CharacterController
         {
 			if(strafeInput.GetButtonDown())
 			{
-				cc.Strafe(!cc.isStrafing);
+				cc.Strafe(!cc.IsStrafing);
 			}
             
         }
@@ -432,11 +432,11 @@ namespace Invector.CharacterController
                 }
             }
 
-            if (changeCameraState && !cc.isStrafing)
+            if (changeCameraState && !cc.IsStrafing)
                 tpCamera.ChangeState(customCameraState, customlookAtPoint, smoothCameraState);
             else if (cc.isCrouching)
                 tpCamera.ChangeState("Crouch", true);
-            else if (cc.isStrafing)
+            else if (cc.IsStrafing)
                 tpCamera.ChangeState("Strafing", true);
             else
                 tpCamera.ChangeState("Default", true);
@@ -444,7 +444,7 @@ namespace Invector.CharacterController
 
         protected virtual void RotateWithCamera(Transform cameraTransform)
         {
-            if (cc.isStrafing && !cc.actions && !cc.lockMovement)
+            if (cc.IsStrafing && !cc.actions && !cc.lockMovement)
             {
                 // smooth align character with aim position               
                 if (tpCamera != null && tpCamera.lockTarget)
