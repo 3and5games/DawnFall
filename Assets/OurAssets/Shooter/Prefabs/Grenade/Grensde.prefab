@@ -290,18 +290,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d036c41cfb4dcd1448a2874144c3ab22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwingWeapon: 0
+  throwDelay: 1
   WeaponAimEffect: {fileID: 0}
   WeaponSourceEffect: {fileID: 0}
-  WeaponBulletEfect: {fileID: 0}
+  WeaponBulletEfect: {fileID: 1848285310310422, guid: 10350418254e843ddb1e83fce30f6be9,
+    type: 2}
   source: {fileID: 4562243685597832}
   ShiftAngle: 0
   bulletInShoot: 1
   pullBackTime: 1
   pullOutTime: 1
   ForceMultiplyer: 2500
-  fireRate: 2
-  reloadTime: 2
+  fireRate: 3
+  reloadTime: 3
   Capacity: 1
   currentAmmo: 0
   shooting: 0
   reloading: 0
+  weaponAnimationId: 4

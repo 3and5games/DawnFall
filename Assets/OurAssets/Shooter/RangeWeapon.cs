@@ -51,6 +51,7 @@ public class RangeWeapon : MonoBehaviour
     public bool shooting = false;
     public bool reloading = false;
 
+	public int weaponAnimationId;
 
 
     void Start()
@@ -59,7 +60,8 @@ public class RangeWeapon : MonoBehaviour
     }
 
     private void Reload()
-    {
+	{
+		Debug.Log ("reload "+Time.time);
         reloading = true;
 		GetComponentInParent<Animator> ().SetTrigger ("Reload");
         Invoke("FinishReload", reloadTime);
@@ -67,6 +69,8 @@ public class RangeWeapon : MonoBehaviour
 
     private void FinishReload()
     {
+		Debug.Log ("F "+Time.time);
+		ShowVisual ();
         currentAmmo = Capacity;
         reloading = false;
         if (shooting)
@@ -77,7 +81,6 @@ public class RangeWeapon : MonoBehaviour
 
     void Shoot()
     {
-
         currentAmmo--;
         if (currentAmmo == 0)
         {
@@ -85,8 +88,11 @@ public class RangeWeapon : MonoBehaviour
         }
 
         
-        WeaponBulletEffect be = Instantiate(WeaponBulletEfect).GetComponent<WeaponBulletEffect>();
-    
+		WeaponBulletEffect be = null;
+		if(WeaponBulletEfect)
+		{
+			be = Instantiate(WeaponBulletEfect).GetComponent<WeaponBulletEffect>();
+		}
 
         for (int i = 0; i < bulletInShoot;i++)
         {
@@ -105,22 +111,40 @@ public class RangeWeapon : MonoBehaviour
                     Instantiate(WeaponAimEffect).GetComponent<WeaponAimEffect>().Init(hit);
                 }
 
-                be.Init(hit, source);        
+				if(be)
+				{
+                	be.Init(hit, source);
+				}
             }
             else
             {
-                be.Init(Camera.main.transform.forward*100, source);
-            }
+				if(be)
+				{
+                	be.Init(Camera.main.transform.forward*100, source);
+				}
+			}
+
         }
      
-            if (!sourceEffect)
+		if (!sourceEffect && WeaponSourceEffect!=null)
             {
                 sourceEffect = Instantiate(WeaponSourceEffect).GetComponent<WeaponSourceEffect>();
-            }
-
-        sourceEffect.Init(source);
-       
+			sourceEffect.Init(source);    
+		}
 
     }
 
+	public void HideVisual(){
+		foreach(MeshRenderer mr in GetComponentsInChildren<MeshRenderer>())
+		{
+			mr.enabled = false;
+		}
+	}
+
+	public void ShowVisual(){
+		foreach(MeshRenderer mr in GetComponentsInChildren<MeshRenderer>())
+		{
+			mr.enabled = true;
+		}
+	}
 }

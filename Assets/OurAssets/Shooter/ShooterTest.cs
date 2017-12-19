@@ -57,8 +57,14 @@ public class ShooterTest : MonoBehaviour {
 					Invoke ("TakeWeapon", weapons[currentWeapon].GetComponent<RangeWeapon>().pullOutTime);
 				}
 					
-			
-			animator.SetInteger ("WeaponId", value);
+				int animationId = 0;
+				if (weapons [currentWeapon]) {
+					RangeWeapon rw = weapons [currentWeapon].GetComponent<RangeWeapon> ();
+					if (rw) {
+						animationId = rw.weaponAnimationId;
+					}
+				}
+				animator.SetInteger ("WeaponId", animationId);
 			animator.SetTrigger ("TakeWeapon");
 
 		}

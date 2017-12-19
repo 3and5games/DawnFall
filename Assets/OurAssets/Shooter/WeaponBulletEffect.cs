@@ -9,13 +9,12 @@ public class WeaponBulletEffect : MonoBehaviour {
 
     private Vector3 aimPoint = Vector3.zero;
 
-    public void Init(RaycastHit hit, Transform source)
+	public void Init(RaycastHit hit, Transform source)
     {
-        Debug.Log(hit.point);
         Init(hit.point, source);
     }
 
-    public void Init(Vector3 aim, Transform source)
+	public void Init(Vector3 aim, Transform source)
     {
         aimPoint = aim;
         CancelInvoke("Destroy");
@@ -38,7 +37,7 @@ public class WeaponBulletEffect : MonoBehaviour {
         foreach (ProjectileLauncher launcher in GetComponentsInChildren<ProjectileLauncher>())
         {
             Debug.Log("launch");
-            launcher.Launch(aim);
+			launcher.Launch(aim);
         }
         Invoke("Destroy", 5);
     }
